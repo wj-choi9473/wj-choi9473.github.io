@@ -5,25 +5,9 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Aug 2020 14:25:10 +0900</pubDate>
-    <lastBuildDate>Thu, 27 Aug 2020 14:25:10 +0900</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2020 20:14:26 +0900</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2020 20:14:26 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
-    
-      <item>
-        <title>Example of Post</title>
-        <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;This formula $f(x) = x^2$ is an example.&lt;/code&gt;&lt;br /&gt;
-This formula $f(x) = x^2$ is an example.&lt;/p&gt;
-
-\[1+1\]
-</description>
-        <pubDate>Wed, 26 Aug 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/example/postexample/</link>
-        <guid isPermaLink="true">http://localhost:4000/example/postexample/</guid>
-        
-        
-        <category>Example</category>
-        
-      </item>
     
       <item>
         <title>MarkDown Example</title>
@@ -365,11 +349,11 @@ $\frac{n!}{k!(n-k)!} = {n \choose k}$
 
 </description>
         <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/cheatsheets/markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/cheatsheets/markdown/</guid>
+        <link>http://localhost:4000/%EC%A0%95%EB%A6%AC/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/%EC%A0%95%EB%A6%AC/markdown/</guid>
         
         
-        <category>Cheatsheets</category>
+        <category>정리</category>
         
       </item>
     
