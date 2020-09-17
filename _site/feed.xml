@@ -5,8 +5,8 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Sep 2020 22:56:36 +0900</pubDate>
-    <lastBuildDate>Thu, 17 Sep 2020 22:56:36 +0900</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2020 23:02:45 +0900</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2020 23:02:45 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -332,7 +332,7 @@ Array's Data:
 ----------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_36_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_36_1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linspace()&lt;/code&gt;: numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
@@ -357,7 +357,7 @@ Array's Data:
 ----------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_38_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_38_1.png&amp;gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logspace()&lt;/code&gt;: numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
@@ -385,7 +385,7 @@ Array's Data:
 ----------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_40_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_40_1.png&amp;gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;랜덤값으로-배열-생성&quot;&gt;랜덤값으로 배열 생성&lt;/h3&gt;
 
@@ -477,7 +477,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_45_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_45_0.png&amp;gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.randint()&lt;/code&gt;: numpy.random.randint(low, high=None, size=None, dtype=’l’)&lt;br /&gt;
@@ -502,7 +502,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_48_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_48_0.png&amp;gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.normal()&lt;/code&gt;: normal(loc=0.0, scale=1.0, size=None)
@@ -532,7 +532,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_51_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_51_0.png&amp;gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.rand()&lt;/code&gt;: numpy.random.rand(d0, d1, …, dn)
@@ -577,7 +577,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;output_56_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_56_0.png&amp;gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;표준-데이터-타입&quot;&gt;표준 데이터 타입&lt;/h3&gt;
 
@@ -1804,9 +1804,6 @@ To use the future default and silence this warning we advise to pass `rcond=None
 
 &lt;h3 id=&quot;고유분해&quot;&gt;고유분해&lt;/h3&gt;
 &lt;p&gt;np.linalg.eig(a) : eigen value, eigen vetor 값을 반환&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linalg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eig&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;??&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;특이분해&quot;&gt;특이분해&lt;/h3&gt;
 &lt;p&gt;np.linalg.svd(a, full_matrices=True, compute_uv=True, hermitian=False): $U$ left singular vector, $S$ singular value, $V^T$  right singular vector 값을 반환&lt;/p&gt;

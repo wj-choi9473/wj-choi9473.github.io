@@ -1,4 +1,4 @@
-I"�~<h2 id="numpy란">NumPy란?</h2>
+I"~<h2 id="numpy란">NumPy란?</h2>
 
 <p>Numpy는 행렬 연산을 위한 핵심 라이브러리이며 파이썬의 Array like 객체를 선형대수, 데이터 처리를 위해 ndarray로 개선했다고 생각하면 쉽다.</p>
 
@@ -319,7 +319,7 @@ Array's Data:
 ----------------------------------------
 </code></pre></div></div>
 
-<p><img src="output_36_1.png" alt="png" /></p>
+<p><img src="/assets/img/blog/numpy/output_36_1.png" /></p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">linspace()</code>: numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
@@ -344,7 +344,7 @@ Array's Data:
 ----------------------------------------
 </code></pre></div></div>
 
-<p><img src="output_38_1.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_38_1.png&gt;</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">logspace()</code>: numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
@@ -372,7 +372,7 @@ Array's Data:
 ----------------------------------------
 </code></pre></div></div>
 
-<p><img src="output_40_1.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_40_1.png&gt;</p>
 
 <h3 id="랜덤값으로-배열-생성">랜덤값으로 배열 생성</h3>
 
@@ -464,7 +464,7 @@ Array's Data:
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="output_45_0.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_45_0.png&gt;</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">random.randint()</code>: numpy.random.randint(low, high=None, size=None, dtype=’l’)<br />
@@ -489,7 +489,7 @@ Array's Data:
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="output_48_0.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_48_0.png&gt;</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">random.normal()</code>: normal(loc=0.0, scale=1.0, size=None)
@@ -519,7 +519,7 @@ Array's Data:
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="output_51_0.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_51_0.png&gt;</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">random.rand()</code>: numpy.random.rand(d0, d1, …, dn)
@@ -564,7 +564,7 @@ Array's Data:
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="output_56_0.png" alt="png" /></p>
+<p>&lt;img src = “/assets/img/blog/numpy/output_56_0.png&gt;</p>
 
 <h3 id="표준-데이터-타입">표준 데이터 타입</h3>
 
@@ -1791,9 +1791,6 @@ To use the future default and silence this warning we advise to pass `rcond=None
 
 <h3 id="고유분해">고유분해</h3>
 <p>np.linalg.eig(a) : eigen value, eigen vetor 값을 반환</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">eig</span><span class="err">??</span>
-</code></pre></div></div>
 
 <h3 id="특이분해">특이분해</h3>
 <p>np.linalg.svd(a, full_matrices=True, compute_uv=True, hermitian=False): $U$ left singular vector, $S$ singular value, $V^T$  right singular vector 값을 반환</p>
