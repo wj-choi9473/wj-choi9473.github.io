@@ -5,16 +5,13 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Sep 2020 22:48:04 +0900</pubDate>
-    <lastBuildDate>Thu, 17 Sep 2020 22:48:04 +0900</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2020 22:56:36 +0900</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2020 22:56:36 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
         <title>NumPy 정리</title>
-        <description>&lt;h1&gt;Table of Contents&lt;span class=&quot;tocSkip&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
-&lt;div class=&quot;toc&quot;&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#NumPy란?&quot; data-toc-modified-id=&quot;NumPy란?-1&quot;&gt;NumPy란?&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#NumPy-특징&quot; data-toc-modified-id=&quot;NumPy-특징-2&quot;&gt;NumPy 특징&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-생성&quot; data-toc-modified-id=&quot;배열-생성-3&quot;&gt;배열 생성&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#리스트로-배열-만들기&quot; data-toc-modified-id=&quot;리스트로-배열-만들기-3.1&quot;&gt;리스트로 배열 만들기&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-생성-및-초기화&quot; data-toc-modified-id=&quot;배열-생성-및-초기화-3.2&quot;&gt;배열 생성 및 초기화&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#데이터-생성-함수&quot; data-toc-modified-id=&quot;데이터-생성-함수-3.3&quot;&gt;데이터 생성 함수&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#랜덤값으로-배열-생성&quot; data-toc-modified-id=&quot;랜덤값으로-배열-생성-3.4&quot;&gt;랜덤값으로 배열 생성&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#표준-데이터-타입&quot; data-toc-modified-id=&quot;표준-데이터-타입-3.5&quot;&gt;표준 데이터 타입&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#날짜/시간-배열-생성&quot; data-toc-modified-id=&quot;날짜/시간-배열-생성-3.6&quot;&gt;날짜/시간 배열 생성&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-조회&quot; data-toc-modified-id=&quot;배열-조회-4&quot;&gt;배열 조회&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-속성-정보&quot; data-toc-modified-id=&quot;배열-속성-정보-4.1&quot;&gt;배열 속성 정보&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#인덱싱(Indexing)&quot; data-toc-modified-id=&quot;인덱싱(Indexing)-4.2&quot;&gt;인덱싱(Indexing)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#슬라이싱(Slicing)&quot; data-toc-modified-id=&quot;슬라이싱(Slicing)-4.3&quot;&gt;슬라이싱(Slicing)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#불리언-인덱싱(Boolean-Indexing)&quot; data-toc-modified-id=&quot;불리언-인덱싱(Boolean-Indexing)-4.4&quot;&gt;불리언 인덱싱(Boolean Indexing)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#팬시-인덱싱(Fancy-Indedxing)&quot; data-toc-modified-id=&quot;팬시-인덱싱(Fancy-Indedxing)-4.5&quot;&gt;팬시 인덱싱(Fancy Indedxing)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-값-삽입/수정/삭제/복사&quot; data-toc-modified-id=&quot;배열-값-삽입/수정/삭제/복사-5&quot;&gt;배열 값 삽입/수정/삭제/복사&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-값-삽입&quot; data-toc-modified-id=&quot;배열-값-삽입-5.1&quot;&gt;배열 값 삽입&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-값-수정&quot; data-toc-modified-id=&quot;배열-값-수정-5.2&quot;&gt;배열 값 수정&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-값-삭제&quot; data-toc-modified-id=&quot;배열-값-삭제-5.3&quot;&gt;배열 값 삭제&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-복사&quot; data-toc-modified-id=&quot;배열-복사-5.4&quot;&gt;배열 복사&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-변환&quot; data-toc-modified-id=&quot;배열-변환-6&quot;&gt;배열 변환&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-전치&quot; data-toc-modified-id=&quot;배열-전치-6.1&quot;&gt;배열 전치&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-재구조화&quot; data-toc-modified-id=&quot;배열-재구조화-6.2&quot;&gt;배열 재구조화&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-크기-변경&quot; data-toc-modified-id=&quot;배열-크기-변경-6.3&quot;&gt;배열 크기 변경&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-추가&quot; data-toc-modified-id=&quot;배열-추가-6.4&quot;&gt;배열 추가&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-결합&quot; data-toc-modified-id=&quot;배열-결합-6.5&quot;&gt;배열 결합&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-분할&quot; data-toc-modified-id=&quot;배열-분할-6.6&quot;&gt;배열 분할&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-연산&quot; data-toc-modified-id=&quot;배열-연산-7&quot;&gt;배열 연산&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#브로드캐스팅(Broadcasting)&quot; data-toc-modified-id=&quot;브로드캐스팅(Broadcasting)-7.1&quot;&gt;브로드캐스팅(Broadcasting)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#산술-연산(Arithmetic-Operators)&quot; data-toc-modified-id=&quot;산술-연산(Arithmetic-Operators)-7.2&quot;&gt;산술 연산(Arithmetic Operators)&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#절대값-함수(Absolute-Function)&quot; data-toc-modified-id=&quot;절대값-함수(Absolute-Function)-7.2.1&quot;&gt;절대값 함수(Absolute Function)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#제곱/제곱근-함수&quot; data-toc-modified-id=&quot;제곱/제곱근-함수-7.2.2&quot;&gt;제곱/제곱근 함수&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#지수와-로그-함수-(Exponential-and-Log-Function)&quot; data-toc-modified-id=&quot;지수와-로그-함수-(Exponential-and-Log-Function)-7.2.3&quot;&gt;지수와 로그 함수 (Exponential and Log Function)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#삼각-함수(Trigonometrical-Function)&quot; data-toc-modified-id=&quot;삼각-함수(Trigonometrical-Function)-7.2.4&quot;&gt;삼각 함수(Trigonometrical Function)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#집계-함수(Aggregate-Functions)&quot; data-toc-modified-id=&quot;집계-함수(Aggregate-Functions)-7.3&quot;&gt;집계 함수(Aggregate Functions)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#비교-연산(Comparison-Operators)&quot; data-toc-modified-id=&quot;비교-연산(Comparison-Operators)-7.4&quot;&gt;비교 연산(Comparison Operators)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-정렬&quot; data-toc-modified-id=&quot;배열-정렬-7.5&quot;&gt;배열 정렬&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#부분-정렬&quot; data-toc-modified-id=&quot;부분-정렬-7.5.1&quot;&gt;부분 정렬&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#배열-입출력&quot; data-toc-modified-id=&quot;배열-입출력-8&quot;&gt;배열 입출력&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어&quot; data-toc-modified-id=&quot;데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어-9&quot;&gt;데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어&lt;/a&gt;&lt;/span&gt;&lt;ul class=&quot;toc-item&quot;&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#행렬의-놈&quot; data-toc-modified-id=&quot;행렬의-놈-9.1&quot;&gt;행렬의 놈&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#대각합(trace)&quot; data-toc-modified-id=&quot;대각합(trace)-9.2&quot;&gt;대각합(trace)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#행렬식(determinant)&quot; data-toc-modified-id=&quot;행렬식(determinant)-9.3&quot;&gt;행렬식(determinant)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#역행렬과-선형-연립방정식의-해&quot; data-toc-modified-id=&quot;역행렬과-선형-연립방정식의-해-9.4&quot;&gt;역행렬과 선형 연립방정식의 해&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#고유분해&quot; data-toc-modified-id=&quot;고유분해-9.5&quot;&gt;고유분해&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href=&quot;#특이분해&quot; data-toc-modified-id=&quot;특이분해-9.6&quot;&gt;특이분해&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;numpy란&quot;&gt;NumPy란?&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;numpy란&quot;&gt;NumPy란?&lt;/h2&gt;
 
 &lt;p&gt;Numpy는 행렬 연산을 위한 핵심 라이브러리이며 파이썬의 Array like 객체를 선형대수, 데이터 처리를 위해 ndarray로 개선했다고 생각하면 쉽다.&lt;/p&gt;
 
@@ -55,22 +52,22 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;cs231n과 Numpy Cheatsheet종합 : http://taewan.kim/post/numpy_cheat_sheet/&lt;/p&gt;
+    &lt;p&gt;cs231n과 Numpy Cheatsheet종합  &lt;a href=&quot;http://taewan.kim/post/numpy_cheat_sheet/&quot;&gt;http://taewan.kim/post/numpy_cheat_sheet/&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Numpy 관련 튜터리얼 : http://cs231n.github.io/python-numpy-tutorial/&lt;/p&gt;
+    &lt;p&gt;Numpy 관련 튜터리얼 : &lt;a href=&quot;http://cs231n.github.io/python-numpy-tutorial/&quot;&gt;http://cs231n.github.io/python-numpy-tutorial/&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Numpy의 Axis 관련 문서 : http://taewan.kim/post/numpy_sum_axis/&lt;/p&gt;
+    &lt;p&gt;Numpy의 Axis 관련 문서 : &lt;a href=&quot;http://taewan.kim/post/numpy_sum_axis/&quot;&gt;http://taewan.kim/post/numpy_sum_axis/&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Numpy Cheatsheet (DataCamp): https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf&lt;/p&gt;
+    &lt;p&gt;Numpy Cheatsheet (DataCamp): &lt;a href=&quot;https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf&quot;&gt;https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Numpy 한번에 제대로 배우기(이수안님강의): https://www.youtube.com/watch?v=mirZPrWwvao&lt;/p&gt;
+    &lt;p&gt;Numpy 한번에 제대로 배우기(이수안님강의): &lt;a href=&quot;https://www.youtube.com/watch?v=mirZPrWwvao&quot;&gt;https://www.youtube.com/watch?v=mirZPrWwvao&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Numpy 100문제: https://github.com/rougier/numpy-100&lt;/p&gt;
+    &lt;p&gt;Numpy 100문제: &lt;a href=&quot;https://github.com/rougier/numpy-100&quot;&gt;https://github.com/rougier/numpy-100&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -102,7 +99,7 @@
 
 &lt;h3 id=&quot;리스트로-배열-만들기&quot;&gt;리스트로 배열 만들기&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;numpy/1.png&quot; width=&quot;400px&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/1.png&quot; width=&quot;400px&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2차원부턴 축이 생김 행렬의 모양으로 나타남! 3차원에선 축이 0,1,2로 나눠서 3개가 생긴다.&lt;br /&gt;
 axis관련해선  http://taewan.kim/post/numpy_sum_axis/ 문서를 참조하자.&lt;br /&gt;

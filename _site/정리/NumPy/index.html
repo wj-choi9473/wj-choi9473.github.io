@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>NumPy 정리 - Data Journey</title>
-<meta name="description" content="Table of Contents NumPy란?NumPy 특징배열 생성리스트로 배열 만들기배열 생성 및 초기화데이터 생성 함수랜덤값으로 배열 생성표준 데이터 타입날짜/시간 배열 생성배열 조회배열 속성 정보인덱싱(Indexing)슬라이싱(Slicing)불리언 인덱싱(Boolean Indexing)팬시 인덱싱(Fancy Indedxing)배열 값 삽입/수정/삭제/복사배열 값 삽입배열 값 수정배열 값 삭제배열 복사배열 변환배열 전치배열 재구조화배열 크기 변경배열 추가배열 결합배열 분할배열 연산브로드캐스팅(Broadcasting)산술 연산(Arithmetic Operators)절대값 함수(Absolute Function)제곱/제곱근 함수지수와 로그 함수 (Exponential and Log Function)삼각 함수(Trigonometrical Function)집계 함수(Aggregate Functions)비교 연산(Comparison Operators)배열 정렬부분 정렬배열 입출력데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어행렬의 놈대각합(trace)행렬식(determinant)역행렬과 선형 연립방정식의 해고유분해특이분해">
+<meta name="description" content="NumPy란?">
 
 
   <meta name="author" content="Wonjae Choi">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/%EC%A0%95%EB%A6%AC/NumPy/">
 
 
-  <meta property="og:description" content="Table of Contents NumPy란?NumPy 특징배열 생성리스트로 배열 만들기배열 생성 및 초기화데이터 생성 함수랜덤값으로 배열 생성표준 데이터 타입날짜/시간 배열 생성배열 조회배열 속성 정보인덱싱(Indexing)슬라이싱(Slicing)불리언 인덱싱(Boolean Indexing)팬시 인덱싱(Fancy Indedxing)배열 값 삽입/수정/삭제/복사배열 값 삽입배열 값 수정배열 값 삭제배열 복사배열 변환배열 전치배열 재구조화배열 크기 변경배열 추가배열 결합배열 분할배열 연산브로드캐스팅(Broadcasting)산술 연산(Arithmetic Operators)절대값 함수(Absolute Function)제곱/제곱근 함수지수와 로그 함수 (Exponential and Log Function)삼각 함수(Trigonometrical Function)집계 함수(Aggregate Functions)비교 연산(Comparison Operators)배열 정렬부분 정렬배열 입출력데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어행렬의 놈대각합(trace)행렬식(determinant)역행렬과 선형 연립방정식의 해고유분해특이분해">
+  <meta property="og:description" content="NumPy란?">
 
 
 
@@ -358,7 +358,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="NumPy 정리">
-    <meta itemprop="description" content="Table of ContentsNumPy란?NumPy 특징배열 생성리스트로 배열 만들기배열 생성 및 초기화데이터 생성 함수랜덤값으로 배열 생성표준 데이터 타입날짜/시간 배열 생성배열 조회배열 속성 정보인덱싱(Indexing)슬라이싱(Slicing)불리언 인덱싱(Boolean Indexing)팬시 인덱싱(Fancy Indedxing)배열 값 삽입/수정/삭제/복사배열 값 삽입배열 값 수정배열 값 삭제배열 복사배열 변환배열 전치배열 재구조화배열 크기 변경배열 추가배열 결합배열 분할배열 연산브로드캐스팅(Broadcasting)산술 연산(Arithmetic Operators)절대값 함수(Absolute Function)제곱/제곱근 함수지수와 로그 함수 (Exponential and Log Function)삼각 함수(Trigonometrical Function)집계 함수(Aggregate Functions)비교 연산(Comparison Operators)배열 정렬부분 정렬배열 입출력데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어행렬의 놈대각합(trace)행렬식(determinant)역행렬과 선형 연립방정식의 해고유분해특이분해">
+    <meta itemprop="description" content="NumPy란?">
     <meta itemprop="datePublished" content="2020-08-31T00:00:00+09:00">
     
 
@@ -397,77 +397,74 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#">Table of Contents</a>
+  <li><a href="#numpy란">NumPy란?</a></li>
+  <li><a href="#numpy-특징">NumPy 특징</a></li>
+  <li><a href="#배열-생성">배열 생성</a>
     <ul>
-      <li><a href="#numpy란">NumPy란?</a></li>
-      <li><a href="#numpy-특징">NumPy 특징</a></li>
-      <li><a href="#배열-생성">배열 생성</a>
+      <li><a href="#리스트로-배열-만들기">리스트로 배열 만들기</a></li>
+      <li><a href="#배열-생성-및-초기화">배열 생성 및 초기화</a></li>
+      <li><a href="#데이터-생성-함수">데이터 생성 함수</a></li>
+      <li><a href="#랜덤값으로-배열-생성">랜덤값으로 배열 생성</a></li>
+      <li><a href="#표준-데이터-타입">표준 데이터 타입</a></li>
+      <li><a href="#날짜시간-배열-생성">날짜/시간 배열 생성</a></li>
+    </ul>
+  </li>
+  <li><a href="#배열-조회">배열 조회</a>
+    <ul>
+      <li><a href="#배열-속성-정보">배열 속성 정보</a></li>
+      <li><a href="#인덱싱indexing">인덱싱(Indexing)</a></li>
+      <li><a href="#슬라이싱slicing">슬라이싱(Slicing)</a></li>
+      <li><a href="#불리언-인덱싱boolean-indexing">불리언 인덱싱(Boolean Indexing)</a></li>
+      <li><a href="#팬시-인덱싱fancy-indedxing">팬시 인덱싱(Fancy Indedxing)</a></li>
+    </ul>
+  </li>
+  <li><a href="#배열-값-삽입수정삭제복사">배열 값 삽입/수정/삭제/복사</a>
+    <ul>
+      <li><a href="#배열-값-삽입">배열 값 삽입</a></li>
+      <li><a href="#배열-값-수정">배열 값 수정</a></li>
+      <li><a href="#배열-값-삭제">배열 값 삭제</a></li>
+      <li><a href="#배열-복사">배열 복사</a></li>
+    </ul>
+  </li>
+  <li><a href="#배열-변환">배열 변환</a>
+    <ul>
+      <li><a href="#배열-전치">배열 전치</a></li>
+      <li><a href="#배열-재구조화">배열 재구조화</a></li>
+      <li><a href="#배열-크기-변경">배열 크기 변경</a></li>
+      <li><a href="#배열-추가">배열 추가</a></li>
+      <li><a href="#배열-결합">배열 결합</a></li>
+      <li><a href="#배열-분할">배열 분할</a></li>
+    </ul>
+  </li>
+  <li><a href="#배열-연산">배열 연산</a>
+    <ul>
+      <li><a href="#브로드캐스팅broadcasting">브로드캐스팅(Broadcasting)</a></li>
+      <li><a href="#산술-연산arithmetic-operators">산술 연산(Arithmetic Operators)</a>
         <ul>
-          <li><a href="#리스트로-배열-만들기">리스트로 배열 만들기</a></li>
-          <li><a href="#배열-생성-및-초기화">배열 생성 및 초기화</a></li>
-          <li><a href="#데이터-생성-함수">데이터 생성 함수</a></li>
-          <li><a href="#랜덤값으로-배열-생성">랜덤값으로 배열 생성</a></li>
-          <li><a href="#표준-데이터-타입">표준 데이터 타입</a></li>
-          <li><a href="#날짜시간-배열-생성">날짜/시간 배열 생성</a></li>
+          <li><a href="#절대값-함수absolute-function">절대값 함수(Absolute Function)</a></li>
+          <li><a href="#제곱제곱근-함수">제곱/제곱근 함수</a></li>
+          <li><a href="#지수와-로그-함수-exponential-and-log-function">지수와 로그 함수 (Exponential and Log Function)</a></li>
+          <li><a href="#삼각-함수trigonometrical-function">삼각 함수(Trigonometrical Function)</a></li>
         </ul>
       </li>
-      <li><a href="#배열-조회">배열 조회</a>
+      <li><a href="#집계-함수aggregate-functions">집계 함수(Aggregate Functions)</a></li>
+      <li><a href="#비교-연산comparison-operators">비교 연산(Comparison Operators)</a></li>
+      <li><a href="#배열-정렬">배열 정렬</a>
         <ul>
-          <li><a href="#배열-속성-정보">배열 속성 정보</a></li>
-          <li><a href="#인덱싱indexing">인덱싱(Indexing)</a></li>
-          <li><a href="#슬라이싱slicing">슬라이싱(Slicing)</a></li>
-          <li><a href="#불리언-인덱싱boolean-indexing">불리언 인덱싱(Boolean Indexing)</a></li>
-          <li><a href="#팬시-인덱싱fancy-indedxing">팬시 인덱싱(Fancy Indedxing)</a></li>
-        </ul>
-      </li>
-      <li><a href="#배열-값-삽입수정삭제복사">배열 값 삽입/수정/삭제/복사</a>
-        <ul>
-          <li><a href="#배열-값-삽입">배열 값 삽입</a></li>
-          <li><a href="#배열-값-수정">배열 값 수정</a></li>
-          <li><a href="#배열-값-삭제">배열 값 삭제</a></li>
-          <li><a href="#배열-복사">배열 복사</a></li>
-        </ul>
-      </li>
-      <li><a href="#배열-변환">배열 변환</a>
-        <ul>
-          <li><a href="#배열-전치">배열 전치</a></li>
-          <li><a href="#배열-재구조화">배열 재구조화</a></li>
-          <li><a href="#배열-크기-변경">배열 크기 변경</a></li>
-          <li><a href="#배열-추가">배열 추가</a></li>
-          <li><a href="#배열-결합">배열 결합</a></li>
-          <li><a href="#배열-분할">배열 분할</a></li>
-        </ul>
-      </li>
-      <li><a href="#배열-연산">배열 연산</a>
-        <ul>
-          <li><a href="#브로드캐스팅broadcasting">브로드캐스팅(Broadcasting)</a></li>
+          <li><a href="#부분-정렬">부분 정렬</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#10">10</a></li>
-  <li><a href="#10cdot-mathbf1">10\cdot \mathbf{1}</a>
-      - {:.} <a href="#산술-연산arithmetic-operators">산술 연산(Arithmetic Operators)</a>
-          - {:.} <a href="#절대값-함수absolute-function">절대값 함수(Absolute Function)</a>
-          - {:.} <a href="#제곱제곱근-함수">제곱/제곱근 함수</a>
-          - {:.} <a href="#지수와-로그-함수-exponential-and-log-function">지수와 로그 함수 (Exponential and Log Function)</a>
-          - {:.} <a href="#삼각-함수trigonometrical-function">삼각 함수(Trigonometrical Function)</a>
-      - {:.} <a href="#집계-함수aggregate-functions">집계 함수(Aggregate Functions)</a>
-      - {:.} <a href="#비교-연산comparison-operators">비교 연산(Comparison Operators)</a>
-      - {:.} <a href="#배열-정렬">배열 정렬</a>
-          - {:.} <a href="#부분-정렬">부분 정렬</a>
+  <li><a href="#배열-입출력">배열 입출력</a></li>
+  <li><a href="#데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어">데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어</a>
     <ul>
-      <li><a href="#배열-입출력">배열 입출력</a></li>
-      <li><a href="#데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어">데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어</a>
-        <ul>
-          <li><a href="#행렬의-놈">행렬의 놈</a></li>
-          <li><a href="#대각합trace">대각합(trace)</a></li>
-          <li><a href="#행렬식determinant">행렬식(determinant)</a></li>
-          <li><a href="#역행렬과-선형-연립방정식의-해">역행렬과 선형 연립방정식의 해</a></li>
-          <li><a href="#고유분해">고유분해</a></li>
-          <li><a href="#특이분해">특이분해</a></li>
-        </ul>
-      </li>
+      <li><a href="#행렬의-놈">행렬의 놈</a></li>
+      <li><a href="#대각합trace">대각합(trace)</a></li>
+      <li><a href="#행렬식determinant">행렬식(determinant)</a></li>
+      <li><a href="#역행렬과-선형-연립방정식의-해">역행렬과 선형 연립방정식의 해</a></li>
+      <li><a href="#고유분해">고유분해</a></li>
+      <li><a href="#특이분해">특이분해</a></li>
     </ul>
   </li>
 </ul>
@@ -475,10 +472,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
             </nav>
           </aside>
         
-        <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#NumPy란?" data-toc-modified-id="NumPy란?-1">NumPy란?</a></span></li><li><span><a href="#NumPy-특징" data-toc-modified-id="NumPy-특징-2">NumPy 특징</a></span></li><li><span><a href="#배열-생성" data-toc-modified-id="배열-생성-3">배열 생성</a></span><ul class="toc-item"><li><span><a href="#리스트로-배열-만들기" data-toc-modified-id="리스트로-배열-만들기-3.1">리스트로 배열 만들기</a></span></li><li><span><a href="#배열-생성-및-초기화" data-toc-modified-id="배열-생성-및-초기화-3.2">배열 생성 및 초기화</a></span></li><li><span><a href="#데이터-생성-함수" data-toc-modified-id="데이터-생성-함수-3.3">데이터 생성 함수</a></span></li><li><span><a href="#랜덤값으로-배열-생성" data-toc-modified-id="랜덤값으로-배열-생성-3.4">랜덤값으로 배열 생성</a></span></li><li><span><a href="#표준-데이터-타입" data-toc-modified-id="표준-데이터-타입-3.5">표준 데이터 타입</a></span></li><li><span><a href="#날짜/시간-배열-생성" data-toc-modified-id="날짜/시간-배열-생성-3.6">날짜/시간 배열 생성</a></span></li></ul></li><li><span><a href="#배열-조회" data-toc-modified-id="배열-조회-4">배열 조회</a></span><ul class="toc-item"><li><span><a href="#배열-속성-정보" data-toc-modified-id="배열-속성-정보-4.1">배열 속성 정보</a></span></li><li><span><a href="#인덱싱(Indexing)" data-toc-modified-id="인덱싱(Indexing)-4.2">인덱싱(Indexing)</a></span></li><li><span><a href="#슬라이싱(Slicing)" data-toc-modified-id="슬라이싱(Slicing)-4.3">슬라이싱(Slicing)</a></span></li><li><span><a href="#불리언-인덱싱(Boolean-Indexing)" data-toc-modified-id="불리언-인덱싱(Boolean-Indexing)-4.4">불리언 인덱싱(Boolean Indexing)</a></span></li><li><span><a href="#팬시-인덱싱(Fancy-Indedxing)" data-toc-modified-id="팬시-인덱싱(Fancy-Indedxing)-4.5">팬시 인덱싱(Fancy Indedxing)</a></span></li></ul></li><li><span><a href="#배열-값-삽입/수정/삭제/복사" data-toc-modified-id="배열-값-삽입/수정/삭제/복사-5">배열 값 삽입/수정/삭제/복사</a></span><ul class="toc-item"><li><span><a href="#배열-값-삽입" data-toc-modified-id="배열-값-삽입-5.1">배열 값 삽입</a></span></li><li><span><a href="#배열-값-수정" data-toc-modified-id="배열-값-수정-5.2">배열 값 수정</a></span></li><li><span><a href="#배열-값-삭제" data-toc-modified-id="배열-값-삭제-5.3">배열 값 삭제</a></span></li><li><span><a href="#배열-복사" data-toc-modified-id="배열-복사-5.4">배열 복사</a></span></li></ul></li><li><span><a href="#배열-변환" data-toc-modified-id="배열-변환-6">배열 변환</a></span><ul class="toc-item"><li><span><a href="#배열-전치" data-toc-modified-id="배열-전치-6.1">배열 전치</a></span></li><li><span><a href="#배열-재구조화" data-toc-modified-id="배열-재구조화-6.2">배열 재구조화</a></span></li><li><span><a href="#배열-크기-변경" data-toc-modified-id="배열-크기-변경-6.3">배열 크기 변경</a></span></li><li><span><a href="#배열-추가" data-toc-modified-id="배열-추가-6.4">배열 추가</a></span></li><li><span><a href="#배열-결합" data-toc-modified-id="배열-결합-6.5">배열 결합</a></span></li><li><span><a href="#배열-분할" data-toc-modified-id="배열-분할-6.6">배열 분할</a></span></li></ul></li><li><span><a href="#배열-연산" data-toc-modified-id="배열-연산-7">배열 연산</a></span><ul class="toc-item"><li><span><a href="#브로드캐스팅(Broadcasting)" data-toc-modified-id="브로드캐스팅(Broadcasting)-7.1">브로드캐스팅(Broadcasting)</a></span></li><li><span><a href="#산술-연산(Arithmetic-Operators)" data-toc-modified-id="산술-연산(Arithmetic-Operators)-7.2">산술 연산(Arithmetic Operators)</a></span><ul class="toc-item"><li><span><a href="#절대값-함수(Absolute-Function)" data-toc-modified-id="절대값-함수(Absolute-Function)-7.2.1">절대값 함수(Absolute Function)</a></span></li><li><span><a href="#제곱/제곱근-함수" data-toc-modified-id="제곱/제곱근-함수-7.2.2">제곱/제곱근 함수</a></span></li><li><span><a href="#지수와-로그-함수-(Exponential-and-Log-Function)" data-toc-modified-id="지수와-로그-함수-(Exponential-and-Log-Function)-7.2.3">지수와 로그 함수 (Exponential and Log Function)</a></span></li><li><span><a href="#삼각-함수(Trigonometrical-Function)" data-toc-modified-id="삼각-함수(Trigonometrical-Function)-7.2.4">삼각 함수(Trigonometrical Function)</a></span></li></ul></li><li><span><a href="#집계-함수(Aggregate-Functions)" data-toc-modified-id="집계-함수(Aggregate-Functions)-7.3">집계 함수(Aggregate Functions)</a></span></li><li><span><a href="#비교-연산(Comparison-Operators)" data-toc-modified-id="비교-연산(Comparison-Operators)-7.4">비교 연산(Comparison Operators)</a></span></li><li><span><a href="#배열-정렬" data-toc-modified-id="배열-정렬-7.5">배열 정렬</a></span><ul class="toc-item"><li><span><a href="#부분-정렬" data-toc-modified-id="부분-정렬-7.5.1">부분 정렬</a></span></li></ul></li></ul></li><li><span><a href="#배열-입출력" data-toc-modified-id="배열-입출력-8">배열 입출력</a></span></li><li><span><a href="#데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어" data-toc-modified-id="데이터-분석-관점의-선형대수에서-자주-쓰이는-명령어-9">데이터 분석 관점의 선형대수에서 자주 쓰이는 명령어</a></span><ul class="toc-item"><li><span><a href="#행렬의-놈" data-toc-modified-id="행렬의-놈-9.1">행렬의 놈</a></span></li><li><span><a href="#대각합(trace)" data-toc-modified-id="대각합(trace)-9.2">대각합(trace)</a></span></li><li><span><a href="#행렬식(determinant)" data-toc-modified-id="행렬식(determinant)-9.3">행렬식(determinant)</a></span></li><li><span><a href="#역행렬과-선형-연립방정식의-해" data-toc-modified-id="역행렬과-선형-연립방정식의-해-9.4">역행렬과 선형 연립방정식의 해</a></span></li><li><span><a href="#고유분해" data-toc-modified-id="고유분해-9.5">고유분해</a></span></li><li><span><a href="#특이분해" data-toc-modified-id="특이분해-9.6">특이분해</a></span></li></ul></li></ul></div>
-
-<h2 id="numpy란">NumPy란?</h2>
+        <h2 id="numpy란">NumPy란?</h2>
 
 <p>Numpy는 행렬 연산을 위한 핵심 라이브러리이며 파이썬의 Array like 객체를 선형대수, 데이터 처리를 위해 ndarray로 개선했다고 생각하면 쉽다.</p>
 
@@ -519,22 +513,22 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 
 <ul>
   <li>
-    <p>cs231n과 Numpy Cheatsheet종합 : http://taewan.kim/post/numpy_cheat_sheet/</p>
+    <p>cs231n과 Numpy Cheatsheet종합  <a href="http://taewan.kim/post/numpy_cheat_sheet/">http://taewan.kim/post/numpy_cheat_sheet/</a></p>
   </li>
   <li>
-    <p>Numpy 관련 튜터리얼 : http://cs231n.github.io/python-numpy-tutorial/</p>
+    <p>Numpy 관련 튜터리얼 : <a href="http://cs231n.github.io/python-numpy-tutorial/">http://cs231n.github.io/python-numpy-tutorial/</a></p>
   </li>
   <li>
-    <p>Numpy의 Axis 관련 문서 : http://taewan.kim/post/numpy_sum_axis/</p>
+    <p>Numpy의 Axis 관련 문서 : <a href="http://taewan.kim/post/numpy_sum_axis/">http://taewan.kim/post/numpy_sum_axis/</a></p>
   </li>
   <li>
-    <p>Numpy Cheatsheet (DataCamp): https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf</p>
+    <p>Numpy Cheatsheet (DataCamp): <a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf">https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf</a></p>
   </li>
   <li>
-    <p>Numpy 한번에 제대로 배우기(이수안님강의): https://www.youtube.com/watch?v=mirZPrWwvao</p>
+    <p>Numpy 한번에 제대로 배우기(이수안님강의): <a href="https://www.youtube.com/watch?v=mirZPrWwvao">https://www.youtube.com/watch?v=mirZPrWwvao</a></p>
   </li>
   <li>
-    <p>Numpy 100문제: https://github.com/rougier/numpy-100</p>
+    <p>Numpy 100문제: <a href="https://github.com/rougier/numpy-100">https://github.com/rougier/numpy-100</a></p>
   </li>
 </ul>
 
@@ -566,7 +560,7 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 
 <h3 id="리스트로-배열-만들기">리스트로 배열 만들기</h3>
 
-<p><img src="numpy/1.png" width="400px" height="300px" /></p>
+<p><img src="/assets/img/blog/numpy/1.png" width="400px" height="300px" /></p>
 
 <p>2차원부턴 축이 생김 행렬의 모양으로 나타남! 3차원에선 축이 0,1,2로 나눠서 3개가 생긴다.<br />
 axis관련해선  http://taewan.kim/post/numpy_sum_axis/ 문서를 참조하자.<br />
