@@ -1,0 +1,20 @@
+I"J<ul class="toc__menu">
+  <li><a href="#ipython과-주피터-노트북-팁">IPython과 주피터 노트북 팁</a>
+    <ul>
+      <li><a href="#magic-command">Magic Command</a>
+        <ul>
+          <li><a href="#자주-사용하는-ipython-매직-커맨드">자주 사용하는 IPython 매직 커맨드</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#확장프로그램">확장프로그램</a>
+      - {:.} <a href="#nbextension-설치">nbextension 설치</a>
+      - {:.} <a href="#꼭-추천하는-두가지">꼭 추천하는 두가지!</a>
+      - {:.} <a href="#1컨벤션에-맞게-자동으로-고쳐주는-autopep8">1.컨벤션에 맞게 자동으로 고쳐주는 autopep8</a>
+      - {:.} <a href="#2파이참-처럼-코드를-자동으로-complete-해주는-tabnine">2.파이참 처럼 코드를 자동으로 complete 해주는 TabNine</a></li>
+  <li><a href="#코딩하기-편한-글꼴">코딩하기 편한 글꼴</a></li>
+  <li><a href="#스타트업파일">스타트업파일</a>
+      - {:.} <a href="#inline-backend-config">inline backend config</a></li>
+</ul>
+:ET

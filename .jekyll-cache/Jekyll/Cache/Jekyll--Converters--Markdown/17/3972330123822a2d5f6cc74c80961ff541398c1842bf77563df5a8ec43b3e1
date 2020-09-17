@@ -1,0 +1,26 @@
+I"<ul class="toc__menu">
+  <li><a href="#python-기초">Python 기초</a>
+      - {:.} <a href="#목차">목차</a>
+    <ul>
+      <li><a href="#식별자">식별자</a></li>
+      <li><a href="#자료형">자료형</a></li>
+      <li><a href="#형변환">형변환</a></li>
+      <li><a href="#연산자">연산자</a></li>
+      <li><a href="#자료형-관련-내장함수">자료형 관련 내장함수</a></li>
+      <li><a href="#제어문">제어문</a></li>
+      <li><a href="#함수">함수</a></li>
+      <li><a href="#클래스">클래스</a></li>
+      <li><a href="#모듈과-패키지">모듈과 패키지</a></li>
+      <li><a href="#예외처리">예외처리</a>
+        <ul>
+          <li><a href="#try-except문">try-except문</a></li>
+          <li><a href="#try-finally문">try-finally문</a></li>
+          <li><a href="#try-except-else-finally문">try-except-else-finally문</a></li>
+          <li><a href="#raise문">raise문</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#reference">Reference</a></li>
+</ul>
+:ET

@@ -1,0 +1,1946 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Python 기초 - Data Journey</title>
+<meta name="description" content="한동안 코딩을 안해서ㅠㅠ…복습차원에서 기초부터 정리해보았다.">
+
+
+  <meta name="author" content="Wonjae Choi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data Journey">
+<meta property="og:title" content="Python 기초">
+<meta property="og:url" content="http://localhost:4000/python/Python%EA%B8%B0%EC%B4%88/">
+
+
+  <meta property="og:description" content="한동안 코딩을 안해서ㅠㅠ…복습차원에서 기초부터 정리해보았다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-27T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/Python%EA%B8%B0%EC%B4%88/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonjae Choi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Data Journey Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Data Journey
+          <span class="site-subtitle">Growth hacking and Problem solving</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#python" itemprop="item"><span itemprop="name">Python</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Python 기초</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Wonjae Choi" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonjae Choi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>제 다양한 생각, 책, 논문등을 정리하며 필요한 역량을 채우기 위해 공부해 나가는 과정을 공유할 예정입니다. <br /> 글에서 잘못된 부분, 수정했으면 하는 부분, 그 외에 의견이 있을 시 알려주신다면 감사하겠습니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:wj.choi9473@kaist.ac.kr">
+            <meta itemprop="email" content="wj.choi9473@kaist.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/wonjae-choi-92b567179" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/wj-choi9473" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Python 기초">
+    <meta itemprop="description" content="한동안 코딩을 안해서ㅠㅠ…복습차원에서 기초부터 정리해보았다.">
+    <meta itemprop="datePublished" content="2020-07-27T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Python 기초
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        12 minute read
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#python-기초">Python 기초</a>
+      - {:.} <a href="#목차">목차</a>
+    <ul>
+      <li><a href="#식별자">식별자</a></li>
+      <li><a href="#자료형">자료형</a></li>
+      <li><a href="#형변환">형변환</a></li>
+      <li><a href="#연산자">연산자</a></li>
+      <li><a href="#자료형-관련-내장함수">자료형 관련 내장함수</a></li>
+      <li><a href="#제어문">제어문</a></li>
+      <li><a href="#함수">함수</a></li>
+      <li><a href="#클래스">클래스</a></li>
+      <li><a href="#모듈과-패키지">모듈과 패키지</a></li>
+      <li><a href="#예외처리">예외처리</a>
+        <ul>
+          <li><a href="#try-except문">try-except문</a></li>
+          <li><a href="#try-finally문">try-finally문</a></li>
+          <li><a href="#try-except-else-finally문">try-except-else-finally문</a></li>
+          <li><a href="#raise문">raise문</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#reference">Reference</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>한동안 코딩을 안해서ㅠㅠ…복습차원에서 기초부터 정리해보았다.</p>
+
+<h1 id="python-기초">Python 기초</h1>
+
+<h3 id="목차">목차</h3>
+
+<p><a href="#식별자">식별자</a><br />
+<a href="#자료형">자료형</a><br />
+<a href="#형변환">형변환</a><br />
+<a href="#연산자">연산자</a><br />
+<a href="#자료형-관련-내장함수">자료형 관련 내장함수</a><br />
+<a href="#제어문">제어문</a><br />
+<a href="#함수">함수</a><br />
+<a href="#클래스">클래스</a><br />
+<a href="#모듈과-패키지">모듈과 패키지</a><br />
+<a href="#예외처리">예외처리</a><br />
+<a href="#Reference">Reference</a></p>
+
+<hr />
+
+<h2 id="식별자">식별자</h2>
+
+<ul>
+  <li>변수(Ram 에 값을 할당하는 행위), 함수, 클래스, 모듈등의 이름을 식별자 라고 함.</li>
+  <li>식별자 규칙
+    <ul>
+      <li>소문자, 대문자, 숫자, 언더스코어(_) 를 사용.</li>
+      <li>가장 앞에 숫자 사용 불가</li>
+      <li>예약어 사용 불가</li>
+      <li>컨벤션
+        <ul>
+          <li>snake_case : nyan_cat : 변수, 함수</li>
+          <li>CamelCase : NyanCat, nyanCat : 클래스</li>
+          <li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 스타일 가이드</a> 참고하자! (나중에 한번 정리를 하고 숙지 하면 좋을듯 하다.)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예약어
+</span><span class="n">help</span><span class="p">(</span><span class="s">'keywords'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+</code></pre></div></div>
+
+<h2 id="자료형">자료형</h2>
+
+<ul>
+  <li>기본 데이터 타입 : int(정수), float(실수), bool(True,False), str(“문자열”)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># str 타입에서 f 포매팅: 표현식도 사용가능, 문자열앞에 f 붙이면 된다.
+</span><span class="n">name</span> <span class="o">=</span> <span class="s">'Wonjae'</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f"Hello, my name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">. I'm </span><span class="si">{</span><span class="n">age</span><span class="o">+</span><span class="mi">2</span><span class="si">}</span><span class="s"> years old."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, my name is Wonjae. I'm 27 years old.
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># dict 에서도 사용 가능하다
+</span><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="s">'wonjae'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="s">f"Hello, My name is </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span><span class="si">}</span><span class="s">. I'm </span><span class="si">{</span><span class="n">person</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="si">}</span><span class="s"> years old."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, My name is wonjae. I'm 27 years old.
+</code></pre></div></div>
+
+<ul>
+  <li>컬렉션 데이터 타입 : list[iterable], tuple(iterable), dict{key:value}, set{}
+    <ul>
+      <li>len(collection): 길이(갯수) 구하는 함수, 자주 쓰임!</li>
+    </ul>
+  </li>
+  <li>Indexing and slicing : 특정 위치의 데이터를 출력할때 사용
+    <ul>
+      <li>iterable한 데이터 타입에서만 사용이 가능</li>
+      <li>[] : mask, masking</li>
+      <li>[idx] : idx 위치 데이터를 출력</li>
+      <li>[start:end] : start에서 end까지 출력(end는 포함되지 않습니다.)</li>
+      <li>[start:end:stride] : stride만큼씩 점프하여 출력</li>
+    </ul>
+  </li>
+  <li>데이터 타입별 자주 쓸법한 메소드</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>타입</th>
+      <th>설명</th>
+      <th>예</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>List</td>
+      <td>마지막에 요소추가</td>
+      <td>a.append()</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td>맨마지막 요소 돌려주고 그 요손 삭제</td>
+      <td>a.pop()</td>
+    </tr>
+    <tr>
+      <td>Dict</td>
+      <td>key만 반환(list로반환)</td>
+      <td>a.keys(), list(a.keys))</td>
+    </tr>
+    <tr>
+      <td>Dict</td>
+      <td>value만 반환</td>
+      <td>a.values()</td>
+    </tr>
+    <tr>
+      <td>Dict</td>
+      <td>key,value쌍얻기</td>
+      <td>a.items()</td>
+    </tr>
+    <tr>
+      <td>Dict</td>
+      <td>key로value얻기</td>
+      <td>a.get(‘key’)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="형변환">형변환</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> - 이미 변수에 설정된 데이터 타입을 변경하는 행위 datatype() ex) int('string')
+ - zip()
+     - 여러개의 리스트를 같은 인덱스끼리 묶어주는 함수
+     - 두개의 리스트를 묶어서 dict 형변환
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예시
+</span><span class="n">conversion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s">'1'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conversion</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">conversion</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+&lt;class 'int'&gt;
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># zip예시
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"wonjae"</span><span class="p">,</span>
+    <span class="s">"age"</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+    <span class="s">"sex"</span><span class="p">:</span> <span class="s">"male"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">col</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">personal</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">values</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"리스트1:"</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"리스트2:"</span><span class="p">,</span> <span class="n">personal</span><span class="p">)</span>
+<span class="n">example</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">personal</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"zip사용:"</span><span class="p">,</span> <span class="n">example</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>리스트1: ['name', 'age', 'sex']
+리스트2: ['wonjae', 27, 'male']
+zip사용: [('name', 'wonjae'), ('age', 27), ('sex', 'male')]
+</code></pre></div></div>
+
+<h2 id="연산자">연산자</h2>
+<ul>
+  <li>산술 : +, -, *, /(나누기), //(몫), %(나머지), **</li>
+  <li>비교 : &lt;, &gt;, ==, !=, &gt;=, &lt;=</li>
+  <li>할당 : A (산술)= (data) ex) c += a -&gt; c = c + a</li>
+  <li>논리 : and, or, not</li>
+  <li>멤버 : in, not in</li>
+  <li>식별 : is, is not</li>
+</ul>
+
+<h2 id="자료형-관련-내장함수">자료형 관련 내장함수</h2>
+<p>자료형 관련해서 자주쓰고 유용했던거 같은 내장함수를 정리해 보았다.</p>
+
+<ul>
+  <li>
+    <p>enumerate(iterable) : 순서가 있는 자료형을 입력받아 인덱스 값을 포함하는 enumerate 객체를 돌려줌</p>
+  </li>
+  <li>
+    <p>filter(f, iterable) : 첫째인수로 함수, 두번째 인수로 자료형, 함수의 반환값이 참인것만 돌려줌</p>
+  </li>
+  <li>
+    <p>len() : 리스트와 같은 자료형의 길이(요소의 전체 개수)를 돌려줌</p>
+  </li>
+  <li>
+    <p>map(f, iterable) : 함수(f)와 반복 가능한(iterable)자료형을 입력으로 받고 f가 수행한 결과를 묶어서 돌려줌</p>
+  </li>
+  <li>
+    <p>range(start,stop,step) : 정수 순회자를 반복 for문자 자주씀</p>
+  </li>
+  <li>
+    <p>zip() : 동일한 개수로 이루어진 자료형을 묶어줌</p>
+  </li>
+  <li>
+    <p>reduce(f, iterable) : 파이썬의 functools 내장모듈의 reduce()도 누적집계를 위해 자주 쓴다</p>
+    <ul>
+      <li>reduce() 는 내장함수가 아니기 때문에 functools 내장 모듈을 통해 import를 해야한다. 무슨 의미인진 뒤에 모듈과 패키지에서 다룬다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># enumerate
+</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"jay"</span><span class="p">,</span> <span class="s">"mel"</span><span class="p">,</span> <span class="s">"won"</span><span class="p">,</span> <span class="s">"han"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 jay
+1 mel
+2 won
+3 han
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># filter
+</span><span class="k">def</span> <span class="nf">positive</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">positive</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])))</span>
+<span class="c1"># 람다를 쓰면 더 간편
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3]
+[1, 2, 3]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># map
+</span><span class="k">def</span> <span class="nf">twice</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">twice</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])))</span>
+<span class="c1"># 람다를 쓰면 더 간편
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 4, 6, 8]
+[2, 4, 6, 8]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># reduce
+</span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="c1"># 먼저 0 과 1을 더하고, 그결과에 2를 더하고...누적으로 4까지 더한 값을 돌려준다
+</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10
+</code></pre></div></div>
+
+<h2 id="제어문">제어문</h2>
+<ul>
+  <li>조건문: 특정 조건에 따라서 코드를 실행하고 싶을때 사용
+    <ul>
+      <li>if, else, elif</li>
+    </ul>
+  </li>
+  <li>조건부표현식: 간단한 if, else를 한줄로 표현<br />
+  (condition True) if (condition) else (condition False)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 조건부 표현식 예
+</span><span class="n">score</span> <span class="o">=</span> <span class="mi">70</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"success"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"failure"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>success
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="s">"success"</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="k">else</span> <span class="s">"failure"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>success
+</code></pre></div></div>
+
+<ul>
+  <li>반복문: 특정 코드를 반복적으로 실행 시키고 싶을때 사용
+    <ul>
+      <li>while, for</li>
+      <li>continue, break</li>
+      <li>nested loop: 중첩반복문! 많은 연습이 필요하다 ㅠ</li>
+    </ul>
+  </li>
+  <li>comprehention: 다른 sequence로부터 새로운 iterable object를 for 문보다 빠르게 만들어줌
+    <ul>
+      <li>list comprehension <code class="language-plaintext highlighter-rouge">[출력표현식 for 요소 in 입력Sequence [if 조건식]]</code></li>
+      <li>set comprehension <code class="language-plaintext highlighter-rouge">{출력표현식 for 요소 in 입력Sequence [if 조건식]}</code></li>
+      <li>dict comprehension <code class="language-plaintext highlighter-rouge">{Key:Value for 요소 in 입력Sequence [if 조건식]}</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># nested loop
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>   
+    <span class="k">print</span><span class="p">()</span>  <span class="c1"># for에 포함되서 하나씩 프린트
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+1 2 3 4 5 6 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">ls</span><span class="p">:</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 360 ms, sys: 25.5 ms, total: 386 ms
+Wall time: 394 ms
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># list comprehention 더 빠른 속도 확인
+</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">ls</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 312 ms, sys: 40 ms, total: 352 ms
+Wall time: 353 ms
+</code></pre></div></div>
+
+<h2 id="함수">함수</h2>
+<ul>
+  <li>
+    <p>크게 전역함수, 지역함수, 람다함수, 메소드(클래스내부의 구현된 함수)로 나눔</p>
+  </li>
+  <li>parameter, argument</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">*args, **kwargs : 입력값이 여러개일때</code><br />
+<code class="language-plaintext highlighter-rouge">* args -&gt; 튜플, **kwargs -&gt; 딕셔너리
+*하나일때 튜플로 묶어주고 두개일때 딕셔너리로 묶어준다</code></p>
+  </li>
+  <li>docstring : 함수설명</li>
+  <li>scope : 함수안에서 선언되는 변수와 밖의 변수의 범위가 다름
+    <ul>
+      <li>전역(global): 함수 밖, 함수안에서 참조 가능, 변경하고싶으면 global문 사용 근데 잘 안쓴다</li>
+      <li>지역(local) : 함수 안</li>
+    </ul>
+  </li>
+  <li>inner function : 함수안에 함수를 선언</li>
+  <li>
+    <p>lambda function : 간략한 함수를 한줄의 코드로 작성(아주유용! 주로 map, filter와 같이 사용했다)
+<code class="language-plaintext highlighter-rouge">lambda parameter1,parameter2,...: 표현식 ex) add = lambda a, b: a+b</code></p>
+  </li>
+  <li>데코레이터: 함수에서 코드를 바꾸지 않고 기능을 추가하거나 수정하고 싶을때 사용하는 문법 @함수이름 으로 실행</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 전형적인 형식
+</span><span class="k">def</span> <span class="nf">multiplication_1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># a, b는 매개변수(parameter), 디폴트 파라미터도 설정가능
+</span>    <span class="s">"""
+    docstring은 함수의 설명을 작성
+    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>  <span class="c1"># return: 함수를 실행한 결과를 저장하고 싶을때 사용
+</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">multiplication_1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># 5, 10는 인수(argument)
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>50
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># doctring 확인, 참고로 주피터노트북에서 함수이름?, 함수이름?? 으로도 확인 가능
+</span><span class="n">help</span><span class="p">(</span><span class="n">multiplication_1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Help on function multiplication_1 in module __main__:
+
+multiplication_1(a, b=1)
+    docstring은 함수의 설명을 작성
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># *args 예제
+</span><span class="k">def</span> <span class="nf">multiplication_2</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">*</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">multiplication_2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>120
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># **kwargs 예제
+</span><span class="k">def</span> <span class="nf">make_dict</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="n">make_dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"wonjae"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'wonjae', 'age': 3}
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">),</span> <span class="n">args</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">kwargs</span><span class="p">.</span><span class="n">values</span><span class="p">()))</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">num1</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">num2</span><span class="o">=</span><span class="mi">7</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;class 'tuple'&gt; (1, 2, 3, 4, 5)
+&lt;class 'dict'&gt; {'num1': 6, 'num2': 7}
+28
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># scope 예제
+# global
+</span><span class="n">gv</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">echo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">gv</span><span class="p">)</span>
+
+
+<span class="n">echo</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># local
+</span><span class="n">gv</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">echo</span><span class="p">():</span>
+    <span class="n">gv</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># 로컬영역에 100
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">gv</span><span class="p">)</span>
+
+
+<span class="n">echo</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"local:"</span><span class="p">,</span> <span class="n">gv</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100
+local: 10
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gv</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">echo</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">gv</span>   <span class="c1"># 글로벌에 있는 gv가 100으로 되어 출력
+</span>    <span class="n">gv</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">gv</span><span class="p">)</span>
+
+
+<span class="n">echo</span><span class="p">()</span>
+<span class="n">gv</span>  <span class="c1"># 100
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100
+
+
+
+
+
+100
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># lambda
+</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">"함수:"</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">"람다함수:"</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>함수: 3
+람다함수: 3
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 람다 표현식에 조건부 표현식 사용
+# 간단한 식만 하자! 복잡한 조건문은 그냥 함수로!
+# lambda parameters: 식1 if 조건식 else 식2
+</span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, '3', 4, 5, '6']
+</code></pre></div></div>
+
+<p>데코레이터 예제</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 데코레이터 작성하기
+</span><span class="k">def</span> <span class="nf">im_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>  <span class="c1"># func 함수 안에 넣을 함수가 됨
+</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>   <span class="c1"># &lt;- 호출할 함수를 감싸는 함수
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"before func"</span><span class="p">)</span>  <span class="c1"># &lt;- 함수 앞에서 실행할 내용
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># &lt;- 함수
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"after func"</span><span class="p">)</span>  <span class="c1"># &lt;- 함수 뒤에서 실행할 내용
+</span>    <span class="k">return</span> <span class="n">wrapper</span>                      <span class="c1"># &lt;- closure 함수로 만든다.
+</span>
+<span class="c1"># 데코레이터 적용하기
+</span><span class="o">@</span><span class="n">im_decorator</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="n">func1</span><span class="p">(</span><span class="s">"hello"</span><span class="p">,</span> <span class="s">"yay"</span><span class="p">,</span> <span class="n">wonjae</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>before func
+('hello', 'yay') {'wonjae': 27}
+after func
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예제 함수의 실행시간을 출력하는 데코레이터
+</span>
+<span class="c1"># 먼저 import time 을 해야하나 나는 스타트업파일을 설정해둠(이것도 나중에 tip으로 다루겠다)
+</span>
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">time_now</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%H:%M:%S'</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">f"excuted in </span><span class="si">{</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">}</span><span class="s">, finished </span><span class="si">{</span><span class="n">time_now</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">timer</span>
+<span class="k">def</span> <span class="nf">decotest1</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="n">decotest1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000000</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>excuted in 1.7978930473327637, finished 18:51:11
+
+
+
+
+
+4999999950000000
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">timer</span>
+<span class="k">def</span> <span class="nf">decotest2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="n">decotest2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>excuted in 9.5367431640625e-07, finished 18:51:11
+
+
+
+
+
+17
+</code></pre></div></div>
+
+<h2 id="클래스">클래스</h2>
+
+<ul>
+  <li>객체지향 프로그래밍
+    <ul>
+      <li>따로 다루어야 하지만 여기선 기초적으로 간략히 넘어가겠다…</li>
+      <li>설계도작성(class) -&gt; 실제 물건(object) 라고 생각하자</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">판다스나 넘파이등을 쓸 때 이해를 위해서 대강 이렇다 알아가는 느낌으로 정리해봤다</code></p>
+  </li>
+  <li>변수와 함수들이 모여있는 집합
+    <ul>
+      <li>기본 클래스 사용법
+        <ul>
+          <li>클래스 선언 -&gt; 객체로 만듦 -&gt; 객체에 함수를 호출(클래스 안에 선언된 변수와 함수 사용)</li>
+        </ul>
+      </li>
+      <li>생성자 함수
+        <ul>
+          <li>클래스가 객체로 만들어질때 객체에 선언되는 변수를 설정하는 방법</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>상속 : 다른 클래스를 받아서 기능을 추가해서 새로운 클래스를 만드는 방법
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ex) class 클래스이름(상속할 클래스 이름)
+</code></pre></div>    </div>
+  </li>
+  <li>super() : 부모클래스에서 특정 함수의 코드를 가져오는 방법(__init__에서 변수추가하고싶을때 자주 씀)</li>
+  <li>
+    <p>getter(), setter() : 클래스로 만들어진 객체에 변수값을 수정하거나 출력할때 특정 함수를 통해서 수정하고 출력하는 방법(제약조건을 걸어준다 생각하자!). 그냥 메서드에 get, set을 붙이면 된다. 보통 은닉해서씀.</p>
+  </li>
+  <li>non public(private) : mangling(__) <code class="language-plaintext highlighter-rouge">_(클래스명)</code> 이 붙은 변수로 객체를 생성할때 변경이 되어서 생성
+    <ul>
+      <li>공개 속성과 비공개 속성
+        <ul>
+          <li>공개속성(public attribute): 클래스 바깥에서 접근할 수 있는 속성</li>
+          <li>비공개속성(private attribute): 클래스 안에서만 접근가능. 밑줄두개로 시작하면됨(메서드,클래스도동일)
+  <code class="language-plaintext highlighter-rouge">
+  ex) class 클래스이름:
+      def __init__(self, 매개변수)
+          self.__속성 = 값
+      def __funcname(self):
+          print("hello")
+         </code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>클래스를 설계하는 개념
+    <ul>
+      <li>A is a B : A 는 B이다 -&gt; 상속을 이용해서 클래스를 만듬</li>
+      <li>A has a B : A는 B를 가진다 -&gt; A가 B객체를 가지고 클래스를 만듬</li>
+    </ul>
+  </li>
+  <li>magic(spacial) method
+    <ul>
+      <li>비교
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">__eq__</code>(==), <code class="language-plaintext highlighter-rouge">__ne__</code>(!=)</li>
+          <li><code class="language-plaintext highlighter-rouge">__lt__</code>(&lt;), <code class="language-plaintext highlighter-rouge">__gt__</code>(&gt;), <code class="language-plaintext highlighter-rouge">__le__</code>(&lt;=), <code class="language-plaintext highlighter-rouge">__ge__</code>(&gt;=)</li>
+        </ul>
+      </li>
+      <li>연산
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">__add__</code>(+), <code class="language-plaintext highlighter-rouge">__sub__</code>(-), <code class="language-plaintext highlighter-rouge">__mul__</code>(<code class="language-plaintext highlighter-rouge">*</code>), <code class="language-plaintext highlighter-rouge">__truediv__</code>(/)</li>
+          <li><code class="language-plaintext highlighter-rouge">__floordiv__</code>(//), <code class="language-plaintext highlighter-rouge">__mod__</code>(%), <code class="language-plaintext highlighter-rouge">__pow__</code>(<code class="language-plaintext highlighter-rouge">**</code>)</li>
+        </ul>
+      </li>
+      <li>객체내용출력: <code class="language-plaintext highlighter-rouge">__repr__</code>(개발자용), <code class="language-plaintext highlighter-rouge">__str__</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 판다스 패키지에 DataFrame 이라는 클래스로 만들어진 df라는 객체(오브젝트)
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"jay"</span><span class="p">,</span> <span class="s">"age"</span><span class="p">:</span> <span class="mi">27</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"mel"</span><span class="p">,</span> <span class="s">"age"</span><span class="p">:</span> <span class="mi">26</span><span class="p">},</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예제로 계산기를 만들어본다면
+# 클래스 선언
+</span>
+
+<span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
+
+    <span class="c1"># 생성자 함수 : __init__
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>  <span class="c1"># *args, **kwargs 도 가능하다.
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">num1</span> <span class="o">=</span> <span class="n">num1</span>  <span class="c1"># 단, 매개변수값을 가져오려면 args[i], kwargs["name"] 으로 작성
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">num2</span> <span class="o">=</span> <span class="n">num2</span>
+
+    <span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">num1</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">num2</span>
+
+    <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">num1</span> <span class="o">-</span> <span class="bp">self</span><span class="p">.</span><span class="n">num2</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 클래스 사용
+</span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">calc</span><span class="p">.</span><span class="n">plus</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 클래스 상속 (다중상속도 가능하다, 여기선 하나만 상속하겠다)
+</span><span class="k">class</span> <span class="nc">Calculator2</span><span class="p">(</span><span class="n">Calculator</span><span class="p">):</span>
+
+    <span class="c1"># 곱하기 기능 추가
+</span>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">num1</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">num2</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 상속된 클래스 사용
+</span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">calc</span><span class="p">.</span><span class="n">multiply</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>50
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># super 예제
+</span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+
+<span class="k">class</span> <span class="nc">Son</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">sex</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+        <span class="c1"># super()가 밑에 두줄의 효과라고 생각하면된다! 더 자세한 방법들은 docstring참고
+</span>        <span class="c1">#self.name = name
+</span>        <span class="c1">#self.age = age
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">sex</span> <span class="o">=</span> <span class="n">sex</span>
+
+
+<span class="n">man</span> <span class="o">=</span> <span class="n">Son</span><span class="p">(</span><span class="s">"jay"</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="s">"male"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">man</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">man</span><span class="p">.</span><span class="n">age</span><span class="p">,</span> <span class="n">man</span><span class="p">.</span><span class="n">sex</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jay 27 male
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># getter, setter 예제
+</span><span class="k">class</span> <span class="nc">person</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">setname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>  <span class="c1"># 제약조건
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"setter"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"error"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 출력조건
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"getter"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="n">naming</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">getname</span><span class="p">,</span> <span class="n">setname</span><span class="p">)</span>  <span class="c1"># print같은 함수 네임에 개터세터가 접근하도록 하는 함수
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user1</span> <span class="o">=</span> <span class="n">person</span><span class="p">(</span><span class="s">"jay"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user1</span><span class="p">.</span><span class="n">name</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'jay'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user1</span><span class="p">.</span><span class="n">naming</span> <span class="o">=</span> <span class="s">"as"</span>
+<span class="n">user1</span><span class="p">.</span><span class="n">naming</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setter
+error
+getter
+
+
+
+
+
+'JAY'
+</code></pre></div></div>
+
+<h2 id="모듈과-패키지">모듈과 패키지</h2>
+
+<ul>
+  <li>모듈 : 변수, 함수, 클래스(변수,함수를모아놓음)를 모아놓은 (.py) 확장자를 가진 파일</li>
+  <li>패키지 : 모듈의 기능을 디렉토리별(<strong>init</strong>.py 추가)로 정리해 놓은 개념. numpy, pandas 와 같은 패키지를 import해서 쓰는것이다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>라이브러리란? 모듈이나 패키지가 published 되면 사람들이 그냥 라이브러리라고 부른다고 한다.    
+그렇다면 프레임워크는? 코드의 흐름을 설계하는 라이브러리들의 모음, 설계의 기본틀!  
+Django, Flask 와 같이 웹 어플리케이션 개발을 할 수 있도록 만들어 놓은 작업장을 프레임워크라고 한다.
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>모듈의 생성과 호출</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">module</span><span class="p">.</span><span class="n">py</span>
+<span class="c1"># 매직커맨드로 이 셀안의 있는 내용을 module이란 이름으로 py확장자로 저장
+</span>
+<span class="c1"># 변수,함수,클래스를 작성
+</span><span class="n">base</span> <span class="o">=</span> <span class="s">"변수다"</span>
+
+
+<span class="k">def</span> <span class="nf">disp1</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"disp1"</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">disp2</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"disp2"</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Calc</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sumup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Overwriting module.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 생성확인
+</span><span class="err">!</span><span class="n">ls</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2020-07-15-Python기초.ipynb   module.py
+[1m[36m__pycache__[m[m                   [1m[36mpackage[m[m
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 모듈 호출,
+# 특정 함수나 클래스를 호출 하려면 from 모듈 import 특정 함수,클래스 *로 다가져올수도 있다.
+</span><span class="kn">import</span> <span class="nn">module</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">module</span><span class="p">.</span><span class="n">base</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'변수다'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">module</span><span class="p">.</span><span class="n">disp1</span><span class="p">(</span><span class="s">"함수실행"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disp1 함수실행
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 객체 만들기
+</span><span class="n">calc</span> <span class="o">=</span> <span class="n">module</span><span class="p">.</span><span class="n">Calc</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calc</span><span class="p">.</span><span class="n">sumup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+</code></pre></div></div>
+
+<p>패키지의 생성과 호출</p>
+
+<p>pip, conda install 을 하는게 패키지를 설치하는것이다.<br />
+setup.py 패키지 설치파일 만들기</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 패키지 예시
+# 폴더를 만든거다
+</span><span class="err">!</span><span class="n">tree</span> <span class="n">package</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[01;34mpackage[00m
+├── [01;34mdirectory1[00m
+└── [01;34mdirectory2[00m
+
+2 directories, 0 files
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 패키지 사용시 디렉토리에 __init__.py 파일을 추가
+# python 3.3 버전 이상에서는 필요 없으나 하위버전 호환을 위해 작성
+</span><span class="err">!</span><span class="n">touch</span> <span class="n">package</span><span class="o">/</span><span class="n">directory1</span><span class="o">/</span><span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+<span class="err">!</span><span class="n">touch</span> <span class="n">package</span><span class="o">/</span><span class="n">directory2</span><span class="o">/</span><span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">tree</span> <span class="n">package</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[01;34mpackage[00m
+├── [01;34mdirectory1[00m
+│   └── __init__.py
+└── [01;34mdirectory2[00m
+    └── __init__.py
+
+2 directories, 2 files
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">package</span><span class="o">/</span><span class="n">directory1</span><span class="o">/</span><span class="n">data1</span><span class="p">.</span><span class="n">py</span>
+<span class="c1"># 모듈 만들어서 추가
+</span>
+
+<span class="k">def</span> <span class="nf">plus1</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"data1"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Writing package/directory1/data1.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">package</span><span class="o">/</span><span class="n">directory1</span><span class="o">/</span><span class="n">data2</span><span class="p">.</span><span class="n">py</span>
+
+
+<span class="k">def</span> <span class="nf">plus2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"data2"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Writing package/directory1/data2.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">package</span><span class="o">/</span><span class="n">directory2</span><span class="o">/</span><span class="n">naming</span><span class="p">.</span><span class="n">py</span>
+
+
+<span class="k">def</span> <span class="nf">make</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">+</span><span class="s">"님"</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Writing package/directory2/naming.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">package</span><span class="o">/</span><span class="n">directory1</span><span class="o">/</span><span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">"data1"</span><span class="p">,</span> <span class="s">"data2"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Overwriting package/directory1/__init__.py
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 패키지의 예시
+</span><span class="err">!</span><span class="n">tree</span> <span class="n">package</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[01;34mpackage[00m
+├── [01;34mdirectory1[00m
+│   ├── __init__.py
+│   ├── data1.py
+│   └── data2.py
+└── [01;34mdirectory2[00m
+    ├── __init__.py
+    └── naming.py
+
+2 directories, 5 files
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">package</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">package.directory1.data1</span> <span class="k">as</span> <span class="n">pdd</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pdd</span><span class="p">.</span><span class="n">plus1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data1
+
+
+
+
+
+15
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">package.directory2</span> <span class="kn">import</span> <span class="n">naming</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">naming</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="s">"jay"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'jay님'
+</code></pre></div></div>
+
+<p>지금까진 같은 디렉토리에 있어서 import가 되었다.<br />
+다른 디렉토리에 있는데 import가 되는 케이스는?<br />
+특정 디렉토리에 있는 패키지는 어디에서나 import 가능<br />
+random 패키지가 어디 있는지 찾아보자!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/wonjae/Google Drive/DataAnalyst/블로그용정리
+/Users/wonjae/anaconda3/lib/python37.zip
+/Users/wonjae/anaconda3/lib/python3.7
+/Users/wonjae/anaconda3/lib/python3.7/lib-dynload
+
+/Users/wonjae/anaconda3/lib/python3.7/site-packages
+/Users/wonjae/anaconda3/lib/python3.7/site-packages/aeosa
+/Users/wonjae/anaconda3/lib/python3.7/site-packages/IPython/extensions
+/Users/wonjae/.ipython
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 특정디렉토리 안에 있는걸 확인
+</span><span class="err">!</span> <span class="n">ls</span> <span class="o">/</span> <span class="n">Users</span><span class="o">/</span><span class="n">wonjae</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">7</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls: Users/wonjae/anaconda3/lib/python3.7: No such file or directory
+/:
+[1m[36mApplications[m[m [1m[36mUsers[m[m        [1m[36mcores[m[m        [35mhome[m[m         [1m[36msbin[m[m         [35mvar[m[m
+[1m[36mLibrary[m[m      [1m[36mVolumes[m[m      [1m[36mdev[m[m          [1m[36mopt[m[m          [35mtmp[m[m
+[1m[36mSystem[m[m       [1m[36mbin[m[m          [35metc[m[m          [1m[36mprivate[m[m      [1m[36musr[m[m
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 몇개가 있고 마지막 5개가 뭔지 출력해보자
+# 주피터에선 셸커맨드 실행한 결과를 변수로 받을 수 있다
+</span><span class="n">package</span> <span class="o">=</span> <span class="err">!</span> <span class="n">ls</span> <span class="o">/</span> <span class="n">Users</span><span class="o">/</span><span class="n">wonjae</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">7</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">package</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">package</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18
+['private', 'sbin', 'tmp', 'usr', 'var']
+</code></pre></div></div>
+
+<h2 id="예외처리">예외처리</h2>
+
+<p>프로그램을 만들다 보면 많은 오류를 마주치게 되니 어떻게 처리하는지를 알아보자(나는 개인적으로 크롤링할때 유용했다.)</p>
+
+<h3 id="try-except문">try-except문</h3>
+<ul>
+  <li>
+    <p>에러가 발생해도 코드의 실행을 계속 하고 싶을때<br />
+<code class="language-plaintext highlighter-rouge">try:
+  (예외가 일어날것같은 코드)
+except 발생오류 as 발생오류변수: #그냥 except여도 됨
+  (예외가 있을 때 실행될 코드)</code></p>
+  </li>
+  <li>
+    <p>에러가 발생했을시 처리하지 않고 그냥 회피할때<br />
+<code class="language-plaintext highlighter-rouge">try:
+  (예외가 일어날것같은 코드)
+except:
+  pass</code></p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"done"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+
+IndexError                                Traceback (most recent call last)
+
+&lt;ipython-input-64-5ebb3fdab873&gt; in &lt;module&gt;
+      1 ls = [1, 2, 3]
+----&gt; 2 print(ls[3])
+      3 print("done")
+
+
+IndexError: list index out of range
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"error"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"done"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error
+list index out of range
+done
+</code></pre></div></div>
+
+<h3 id="try-finally문">try-finally문</h3>
+<p>보통 try문을 종료한 후, 데이터베이스 연결을 끊거나 현재 처리 중인 파일을 받는 등 최종 정리를 위한 명령문을 작성할 때 유용<br />
+<code class="language-plaintext highlighter-rouge">try:
+    try-명령문
+finally:
+    finally-명령문</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"wj-choi9473.github.io"</span><span class="p">)</span>
+    <span class="n">conn</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/"</span><span class="p">)</span>  <span class="c1"># 웹 서버에 데이터 요청
+</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">getresponse</span><span class="p">()</span>  <span class="c1"># 서버에 응답 요청
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">getheader</span><span class="p">(</span><span class="s">"Connection"</span><span class="p">))</span>  <span class="c1"># Connection 헤더값 출력
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">,</span> <span class="n">response</span><span class="p">.</span><span class="n">reason</span><span class="p">)</span>  <span class="c1"># 상태와 원인 출력
+</span><span class="k">finally</span><span class="p">:</span>
+    <span class="n">conn</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 서버 연결 끊기
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keep-alive
+200 OK
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span><span class="p">.</span><span class="n">closed</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+</code></pre></div></div>
+
+<h3 id="try-except-else-finally문">try-except-else-finally문</h3>
+<p><code class="language-plaintext highlighter-rouge">try:
+    (예외가 일어날 것 같은 코드)
+except:
+    (예외가 있을 때 실행될 코드1)
+except:
+    (예외가 있을 때 실행될 코드n번째)
+else:   
+    (예외가 없을 때 실행될 코드) #선택사항
+finally:
+    (예외와 상관없이 무조건 실행될 코드) # 선택사항-항상마지막에 실행</code></p>
+
+<h3 id="raise문">raise문</h3>
+<p>강제로 에러를 발생시키는 명령(나는 데이터분석시 아직 써본적이 없다.)</p>
+<ul>
+  <li>파이썬 기본 예외클래스</li>
+  <li>사용자가 직접정의한 클래스: 반드시 Exception클래스를 상속 해야함</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"error"</span><span class="p">)</span>
+    <span class="k">raise</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Done!"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error
+
+
+
+---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-68-bcde7d6d4636&gt; in &lt;module&gt;
+      3 except Exception as e:
+      4     print("error")
+----&gt; 5     raise(e)
+      6 
+      7 print("Done!")
+
+
+&lt;ipython-input-68-bcde7d6d4636&gt; in &lt;module&gt;
+      1 try:
+----&gt; 2     1/0
+      3 except Exception as e:
+      4     print("error")
+      5     raise(e)
+
+
+ZeroDivisionError: division by zero
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"i가 0입니다."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-69-43391dae9f56&gt; in &lt;module&gt;
+      1 i = 0
+      2 if i == 0:
+----&gt; 3     raise ValueError("i가 0입니다.")
+
+
+ValueError: i가 0입니다.
+</code></pre></div></div>
+
+<h1 id="reference">Reference</h1>
+<p><a href="https://docs.python.org/ko/3/tutorial/index.html">Python Document</a><br />
+<a href="https://wikidocs.net/book/1">점프 투 파이썬</a><br />
+<a href="https://github.com/snu-python/pythonbook">바로 쓰는 파이썬</a><br />
+<a href="https://www.fun-coding.org/index.html">잔재미코딩</a><br />
+<a href="https://dojang.io/">코딩도장</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-27T00:00:00+09:00">July 27, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Python+%EA%B8%B0%EC%B4%88%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%25EA%25B8%25B0%25EC%25B4%2588%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%EC%A0%95%EB%A6%AC/markdown/" class="pagination--pager" title="MarkDown Example
+">Previous</a>
+    
+    
+      <a href="/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/" class="pagination--pager" title="IPython과 주피터 노트북 팁
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/NumPy/" rel="permalink">NumPy 정리
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        17 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Table of Contents
+NumPy란?NumPy 특징배열 생성리스트로 배열 만들기배열 생성 및 초기화데이터 생성 함수랜덤값으로 배열 생성표준 데이터 타입날짜/시간 배열 생성배열 조회배열 속성 정보인덱싱(Indexing)슬라이싱(Slicing)불리언 인덱싱(Boolean In...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/" rel="permalink">논문 읽는법
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">대학원에 진학해 한학기동안 있으면서 배우고 느낀점은 가장 다음과 같습니다.
+
+  논문을 통해 지식을 얻는 습관
+  과학적 방법론으로 문제를 해결하는 경험
+  일방적인 주입, 무조건 적인 수용이나 배격이 아닌 과학적 검증 체계를 통한 지식습득 습관
+즉, 스스로 생각하는힘을 많이 기르...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/" rel="permalink">IPython과 주피터 노트북 팁
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">IPython과 주피터 노트북 팁
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/markdown/" rel="permalink">MarkDown Example
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">내가 보려고 만든 마크다운 문법 가이드
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Wonjae Choi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/python/Python%EA%B8%B0%EC%B4%88/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/Python기초"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://wonjaechoi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

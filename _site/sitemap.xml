@@ -2,11 +2,71 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-<<<<<<< HEAD
-      <loc>http://localhost:4000/cheatsheets/markdown/</loc>
-=======
+      <loc>http://localhost:4000/%EC%A0%95%EB%A6%AC/NumPy/</loc>
+      
+        <lastmod>2020-08-31T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/</loc>
+      
+        <lastmod>2020-08-21T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/</loc>
+      
+        <lastmod>2020-07-29T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/python/Python%EA%B8%B0%EC%B4%88/</loc>
+      
+        <lastmod>2020-07-27T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
       <loc>http://localhost:4000/%EC%A0%95%EB%A6%AC/markdown/</loc>
->>>>>>> 24c5c936259264af9634e8f3c5dfde97bc46d7c1
       
         <lastmod>2020-07-13T00:00:00+09:00</lastmod>
       

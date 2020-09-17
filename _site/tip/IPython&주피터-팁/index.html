@@ -1,0 +1,936 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>IPython과 주피터 노트북 팁 - Data Journey</title>
+<meta name="description" content="IPython과 주피터 노트북 팁">
+
+
+  <meta name="author" content="Wonjae Choi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data Journey">
+<meta property="og:title" content="IPython과 주피터 노트북 팁">
+<meta property="og:url" content="http://localhost:4000/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/">
+
+
+  <meta property="og:description" content="IPython과 주피터 노트북 팁">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-29T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonjae Choi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Data Journey Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Data Journey
+          <span class="site-subtitle">Growth hacking and Problem solving</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#tip" itemprop="item"><span itemprop="name">Tip</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">IPython과 주피터 노트북 팁</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Wonjae Choi" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonjae Choi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>제 다양한 생각, 책, 논문등을 정리하며 필요한 역량을 채우기 위해 공부해 나가는 과정을 공유할 예정입니다. <br /> 글에서 잘못된 부분, 수정했으면 하는 부분, 그 외에 의견이 있을 시 알려주신다면 감사하겠습니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:wj.choi9473@kaist.ac.kr">
+            <meta itemprop="email" content="wj.choi9473@kaist.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/wonjae-choi-92b567179" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/wj-choi9473" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="IPython과 주피터 노트북 팁">
+    <meta itemprop="description" content="IPython과 주피터 노트북 팁">
+    <meta itemprop="datePublished" content="2020-07-29T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">IPython과 주피터 노트북 팁
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#ipython과-주피터-노트북-팁">IPython과 주피터 노트북 팁</a>
+    <ul>
+      <li><a href="#magic-command">Magic Command</a>
+        <ul>
+          <li><a href="#자주-사용하는-ipython-매직-커맨드">자주 사용하는 IPython 매직 커맨드</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#확장프로그램">확장프로그램</a>
+      - {:.} <a href="#nbextension-설치">nbextension 설치</a>
+      - {:.} <a href="#꼭-추천하는-두가지">꼭 추천하는 두가지!</a>
+      - {:.} <a href="#1컨벤션에-맞게-자동으로-고쳐주는-autopep8">1.컨벤션에 맞게 자동으로 고쳐주는 autopep8</a>
+      - {:.} <a href="#2파이참-처럼-코드를-자동으로-complete-해주는-tabnine">2.파이참 처럼 코드를 자동으로 complete 해주는 TabNine</a></li>
+  <li><a href="#코딩하기-편한-글꼴">코딩하기 편한 글꼴</a></li>
+  <li><a href="#스타트업파일">스타트업파일</a>
+      - {:.} <a href="#inline-backend-config">inline backend config</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="ipython과-주피터-노트북-팁">IPython과 주피터 노트북 팁</h1>
+
+<p>주피터랩은 주피터노트북의 진화버전이라 생각하고 더 유용하기도 하지만 주피터 노트북의 확장프로그램의 유용성 때문에 나는 혼용해서 쓴다.
+(주피터랩의 확장프로그램을 잘 모르기도 하기 때문ㅠ 시간날때 찾아봐야겠다)</p>
+
+<p>목차<br />
+<a href="#Magic-Command">Magic Command</a><br />
+<a href="#확장프로그램">확장프로그램</a><br />
+<a href="#코딩하기-편한-글꼴">코딩하기 편한 글꼴</a><br />
+<a href="#스타트업파일">스타트업파일</a></p>
+
+<h2 id="magic-command">Magic Command</h2>
+
+<h3 id="자주-사용하는-ipython-매직-커맨드">자주 사용하는 IPython 매직 커맨드</h3>
+<p>셀 내부에서 특별하게 동작하는 커맨드</p>
+<ul>
+  <li>% : 한줄의 magic command를 동작</li>
+  <li>%% : 셀단위의 magic command를 동작</li>
+  <li>! : Shell Command를 수행</li>
+  <li>?,?? : 객체 뒤에 물음표를 붙여 실행하면 객체의 정보 확인</li>
+  <li>magic command
+    <ul>
+      <li>%pwd : 현재 주피터 노트북 파일의 경로</li>
+      <li>!ls : 현재 디렉토리의 파일 리스트</li>
+      <li>%whos : 현재 선언된 변수를 출력</li>
+      <li>%reset : 현재 선언된 변수를 모두 삭제</li>
+      <li>%run script.py : 파이썬 스크립트 실행</li>
+      <li>%time, timeit: 코드의 수행시간 확인</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="확장프로그램">확장프로그램</h1>
+<h3 id="nbextension-설치">nbextension 설치</h3>
+
+<p>https://github.com/ipython-contrib/jupyter_contrib_nbextensions</p>
+
+<ul>
+  <li>pip install jupyter_contrib_nbextensions</li>
+  <li>jupyter contrib nbextension install –user</li>
+</ul>
+
+<h3 id="꼭-추천하는-두가지">꼭 추천하는 두가지!</h3>
+
+<h3 id="1컨벤션에-맞게-자동으로-고쳐주는-autopep8">1.컨벤션에 맞게 자동으로 고쳐주는 autopep8</h3>
+
+<ul>
+  <li>pip install autopep8</li>
+</ul>
+
+<p>로 설치후 nbextension에서 체크!</p>
+
+<p><img src="ipython.png" width="600px" /></p>
+
+<ul>
+  <li>단일 셀을 고칠 때 :  ctrl + l</li>
+  <li>모든 셀을 고칠 때 :  ctrl + shift + l</li>
+</ul>
+
+<h3 id="2파이참-처럼-코드를-자동으로-complete-해주는-tabnine">2.파이참 처럼 코드를 자동으로 complete 해주는 TabNine</h3>
+<p>https://github.com/wenmin-wu/jupyter-tabnine</p>
+
+<ul>
+  <li>pip3 install jupyter-tabnine</li>
+  <li>jupyter nbextension install –py jupyter_tabnine</li>
+  <li>jupyter nbextension enable –py jupyter_tabnine</li>
+  <li>jupyter serverextension enable –py jupyter_tabnine</li>
+</ul>
+
+<p><img src="tabnine.png" width="600px" /></p>
+
+<hr />
+
+<h1 id="코딩하기-편한-글꼴">코딩하기 편한 글꼴</h1>
+<p>D2Coding 글꼴을 다운로드 하자. __0oO 등 구분하기 쉽게 해주는 글꼴이다.</p>
+
+<ul>
+  <li>D2Coding 글꼴 다운로드
+    <ul>
+      <li>https://github.com/naver/d2codingfont/releases/tag/VER1.3.2</li>
+      <li>D2CodingAll/D2Coding-Ver1.3.2-20180524-all.ttc</li>
+      <li>D2Coding.ttc 로 파일명 변경</li>
+    </ul>
+  </li>
+  <li>custom 디렉토리 생성
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">mkdir -p ~/.jupyter/custom</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">~/.jupyter/custom</code> 디렉토리로 D2Coding.ttc 이동
+    <ul>
+      <li>cp ~/Downloads/D2Coding-Ver1.3.2-20180524/D2CodingAll/D2Coding.ttc ~/.jupyter/custom/</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">custom.css</code> 파일 작성
+    <ul>
+      <li>vi custom.css</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@font-face {
+  font-family: d2coding;
+  src: url(./D2Coding.ttc);
+}
+body, code, kbd, pre, samp{
+  font-family: d2coding !important;
+}
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="스타트업파일">스타트업파일</h1>
+
+<p>주피터노트북을 실행시 미리 실행 되는 코드를 설정하는것이다.<br />
+자주쓰는 라이브러리를 호출하기 귀찮을때 좋다:) 하지만 다른사람들에게 코드를 공유할땐 다시 써주는것이 좋다.<br />
+따로 정해진 이름이 있는건 아니고 startup폴더 아래에 .py확장자를 가진 모든 파이썬 스크팁트가 스타트업 파일이며 실행된다.</p>
+
+<p>설정 방법</p>
+
+<p>아이파이썬, 주피터 노트북이 설치되면 사용자 홈 디렉터리 아래에 .ipython 이라는 디렉터리에서 하는것이다. 커맨드가 아니라 GUI로도(파일 찾아서) 가능하다.</p>
+
+<ul>
+  <li>프로필 파일 생성
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$ ipython profile create</code></li>
+    </ul>
+  </li>
+  <li>startup 파일 수정
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$ cd ~/.ipython/profile_default/startup </code></li>
+      <li><code class="language-plaintext highlighter-rouge">$ vi 00-first.py</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 자주쓰는 라이브러리를 자유롭게 추가해주면 된다
+</span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="n">sp</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="n">sm</span>
+<span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="n">sk</span>
+
+<span class="c1"># basic
+</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># data analytics
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">pandas_profiling</span> <span class="k">as</span> <span class="n">pp</span>
+
+<span class="c1"># web crawling
+</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># visulazation
+</span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+
+<span class="c1"># 한글폰트 안깨지기 
+</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc</span>
+<span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">'AppleGothic'</span><span class="p">)</span>
+<span class="c1"># 한글폰트땜에 - 안깨지기
+</span><span class="n">mpl</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<h3 id="inline-backend-config">inline backend config</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 매직 커멘드 설정 없이 바로 그래프를 그릴수 있도록 설정
+- `$ vi ~/.ipython/profile_default/ipython_kernel_config.py`
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.IPKernelApp.matplotlib = 'inline'
+c.InlineBackend.figure_format = 'retina'
+</code></pre></div></div>
+
+<p>ipython 실행시 “UsageError: Line magic function %autoreload not found.” 에러가 발생하는 경우<br />
+ipythonconfig.py 파일에 %loadext autoreload 를 추가</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c = get_config()
+
+c.InteractiveShellApp.execlines = [ "%matplotlib inline", "%loadext autoreload", "%autoreload 2", "mpl.rc('font', family='nanumgothic')", "mpl.rc('axes', unicode_minus=False)", "mpl.rc('figure', figsize=(8, 5))", "mpl.rc('figure', dpi=300)", ]
+
+%load_ext autoreload
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#tip" class="page__taxonomy-item" rel="tag">Tip</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-29T00:00:00+09:00">July 29, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=IPython%EA%B3%BC+%EC%A3%BC%ED%94%BC%ED%84%B0+%EB%85%B8%ED%8A%B8%EB%B6%81+%ED%8C%81%20http%3A%2F%2Flocalhost%3A4000%2Ftip%2FIPython%26%25EC%25A3%25BC%25ED%2594%25BC%25ED%2584%25B0-%25ED%258C%2581%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftip%2FIPython%26%25EC%25A3%25BC%25ED%2594%25BC%25ED%2584%25B0-%25ED%258C%2581%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftip%2FIPython%26%25EC%25A3%25BC%25ED%2594%25BC%25ED%2584%25B0-%25ED%258C%2581%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/python/Python%EA%B8%B0%EC%B4%88/" class="pagination--pager" title="Python 기초
+">Previous</a>
+    
+    
+      <a href="/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/" class="pagination--pager" title="논문 읽는법
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/NumPy/" rel="permalink">NumPy 정리
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        17 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Table of Contents
+NumPy란?NumPy 특징배열 생성리스트로 배열 만들기배열 생성 및 초기화데이터 생성 함수랜덤값으로 배열 생성표준 데이터 타입날짜/시간 배열 생성배열 조회배열 속성 정보인덱싱(Indexing)슬라이싱(Slicing)불리언 인덱싱(Boolean In...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/" rel="permalink">논문 읽는법
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">대학원에 진학해 한학기동안 있으면서 배우고 느낀점은 가장 다음과 같습니다.
+
+  논문을 통해 지식을 얻는 습관
+  과학적 방법론으로 문제를 해결하는 경험
+  일방적인 주입, 무조건 적인 수용이나 배격이 아닌 과학적 검증 체계를 통한 지식습득 습관
+즉, 스스로 생각하는힘을 많이 기르...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Python%EA%B8%B0%EC%B4%88/" rel="permalink">Python 기초
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        12 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">한동안 코딩을 안해서ㅠㅠ…복습차원에서 기초부터 정리해보았다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/markdown/" rel="permalink">MarkDown Example
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">내가 보려고 만든 마크다운 문법 가이드
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Wonjae Choi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/tip/IPython&%EC%A3%BC%ED%94%BC%ED%84%B0-%ED%8C%81/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/tip/IPython&주피터 팁"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://wonjaechoi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
