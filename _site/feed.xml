@@ -5,8 +5,8 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Sep 2020 00:43:49 +0900</pubDate>
-    <lastBuildDate>Fri, 18 Sep 2020 00:43:49 +0900</lastBuildDate>
+    <pubDate>Fri, 18 Sep 2020 00:50:45 +0900</pubDate>
+    <lastBuildDate>Fri, 18 Sep 2020 00:50:45 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -243,8 +243,8 @@ $E[Y_{0i}|D_i = 1]  - E[Y_{0i}|D_i = 0] = 0$ 이 성립하고 처치 상태별 �
 &lt;p&gt;Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Sep 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session2_Field-Experiment/</link>
-        <guid isPermaLink="true">http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session2_Field-Experiment/</guid>
+        <link>http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session2Field-Experiment/</link>
+        <guid isPermaLink="true">http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session2Field-Experiment/</guid>
         
         
         <category>마케팅</category>
@@ -419,8 +419,8 @@ $y_{ij} = \alpha_j + \delta_{j}T_{ij} \times PastMLB_{ij} + \gamma_{j}PastMLD_ij
 
 </description>
         <pubDate>Tue, 15 Sep 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/</link>
-        <guid isPermaLink="true">http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/</guid>
+        <link>http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-TargetedDiscountOffersServeasAdvertising/</link>
+        <guid isPermaLink="true">http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-TargetedDiscountOffersServeasAdvertising/</guid>
         
         
         <category>논문</category>
@@ -769,8 +769,8 @@ $y_{ij} = \alpha_j + \delta_{j}T_{ij} \times PastMLB_{ij} + \gamma_{j}PastMLD_ij
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 08 Sep 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/</link>
-        <guid isPermaLink="true">http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/</guid>
+        <link>http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1Casual-Inference/</link>
+        <guid isPermaLink="true">http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1Casual-Inference/</guid>
         
         
         <category>마케팅</category>
