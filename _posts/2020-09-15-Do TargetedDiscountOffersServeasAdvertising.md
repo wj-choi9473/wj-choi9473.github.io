@@ -86,7 +86,7 @@ Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
 
 저자들이 보고자 하는것은 프로모션을 받은 개인의 개인이 프로모션 이메일을 받았을때와 안받았을때의 차의 평균 지출을 보고자 합니다.   
 수식으로 표현 하자면  
-
+ 
 $\theta \equiv E_{ij}(Y_{ij}^1 - Y_{ij}^0 \mid D_{ij} = 1)$ 입니다.
 
 - $\theta$ : Average treatment effect on the treated population
