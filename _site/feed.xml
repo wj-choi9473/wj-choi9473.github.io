@@ -5,8 +5,8 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Sep 2020 23:02:45 +0900</pubDate>
-    <lastBuildDate>Thu, 17 Sep 2020 23:02:45 +0900</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2020 23:38:01 +0900</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2020 23:38:01 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -357,7 +357,7 @@ Array's Data:
 ----------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_38_1.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_38_1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logspace()&lt;/code&gt;: numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
@@ -385,7 +385,7 @@ Array's Data:
 ----------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_40_1.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_40_1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;랜덤값으로-배열-생성&quot;&gt;랜덤값으로 배열 생성&lt;/h3&gt;
 
@@ -477,7 +477,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_45_0.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_45_0.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.randint()&lt;/code&gt;: numpy.random.randint(low, high=None, size=None, dtype=’l’)&lt;br /&gt;
@@ -502,7 +502,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_48_0.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_48_0.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.normal()&lt;/code&gt;: normal(loc=0.0, scale=1.0, size=None)
@@ -532,7 +532,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_51_0.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_51_0.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random.rand()&lt;/code&gt;: numpy.random.rand(d0, d1, …, dn)
@@ -577,7 +577,7 @@ Array's Data:
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;img src = “/assets/img/blog/numpy/output_56_0.png&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/numpy/output_56_0.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;표준-데이터-타입&quot;&gt;표준 데이터 타입&lt;/h3&gt;
 
@@ -966,11 +966,11 @@ Array's Data:
 &lt;h3 id=&quot;배열-전치&quot;&gt;배열 전치&lt;/h3&gt;
 &lt;p&gt;Transposing Array&lt;/p&gt;
 
-&lt;p&gt;$\begin{align}
-\begin{bmatrix}1&amp;amp;2\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1\2\end{bmatrix} \ 
-\begin{bmatrix}1&amp;amp;2\3&amp;amp;4\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1&amp;amp;3\2&amp;amp;4\end{bmatrix} \ 
-\begin{bmatrix}1&amp;amp;2\3&amp;amp;4\5&amp;amp;6\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1&amp;amp;3&amp;amp;5\2&amp;amp;4&amp;amp;6\end{bmatrix}
-\end{align}$&lt;/p&gt;
+\[\begin{align}
+\begin{bmatrix}1&amp;amp;2\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1\\2\end{bmatrix} \\ 
+\begin{bmatrix}1&amp;amp;2\\3&amp;amp;4\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1&amp;amp;3\\2&amp;amp;4\end{bmatrix} \\ 
+\begin{bmatrix}1&amp;amp;2\\3&amp;amp;4\\5&amp;amp;6\end{bmatrix}^T &amp;amp; = \begin{bmatrix}1&amp;amp;3&amp;amp;5\\2&amp;amp;4&amp;amp;6\end{bmatrix}
+\end{align}\]
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#transpose
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1386,36 +1386,9 @@ array([1.5, 2. , 3. , 4. , 5. , 6. , 7. ])
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;$\begin{bmatrix}
-10 &lt;br /&gt;
-11 &lt;br /&gt;
-12 &lt;br /&gt;
-\end{bmatrix}&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h1 id=&quot;10&quot;&gt;10&lt;/h1&gt;
-    &lt;p&gt;\begin{bmatrix}
-10 &lt;br /&gt;
-11 &lt;br /&gt;
-12 &lt;br /&gt;
-\end{bmatrix}&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h1 id=&quot;10cdot-mathbf1&quot;&gt;10\cdot \mathbf{1}&lt;/h1&gt;
-    &lt;p&gt;\begin{bmatrix}
-10 &lt;br /&gt;
-11 &lt;br /&gt;
-12 &lt;br /&gt;
-\end{bmatrix}
--
-\begin{bmatrix}
-10 &lt;br /&gt;
-10 &lt;br /&gt;
-10 &lt;br /&gt;
-\end{bmatrix}$&lt;br /&gt;
-데이터 분석에서 원래의 데이터가 아니라 각 원소의 평균값을 뺀 평균제거벡터나 0-평균벡터를 사용하는 경우에 쓰임&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+\[\begin{align}\begin{bmatrix}10 \\11 \\12 \\ \end{bmatrix}- 10=\begin{bmatrix}10 \\11 \\12\\ \end{bmatrix}- 10\cdot \mathbf{1}=\begin{bmatrix}10 \\11 \\12\\ \end{bmatrix}-\begin{bmatrix}10 \\10 \\10\\ \end{bmatrix}\end{align}\]
+
+&lt;p&gt;데이터 분석에서 원래의 데이터가 아니라 각 원소의 평균값을 뺀 평균제거벡터나 0-평균벡터를 사용하는 경우에 쓰임&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
