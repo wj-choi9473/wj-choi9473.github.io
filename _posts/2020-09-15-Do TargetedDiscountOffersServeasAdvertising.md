@@ -86,12 +86,13 @@ Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
 
 저자들이 보고자 하는것은 프로모션을 받은 개인의 개인이 프로모션 이메일을 받았을때와 안받았을때의 차의 평균 지출을 보고자 합니다.   
 수식으로 표현 하자면  
-$\theta \equiv E_{ij}(Y^{1}_{ij} - Y^{0}_{ij} | D_{ij} = 1)$ 입니다.
+
+$\theta \equiv E_{ij}(Y_{ij}^1 - Y_{ij}^0 \mid D_{ij} = 1)$ 입니다.
 
 - $\theta$ : Average treatment effect on the treated population
 - $i$ : Individual users indexing
 - $j$ : Experiment indexing
-- $Y^{1}_{ij} - Y^{0}_{ij}$ : Expenditures for $i$ in the presence and the absence of an offer
+- $Y_{ij}^1 - Y_{ij}^0$ : Expenditures for $i$ in the presence and the absence of an offer
 - $D_{ij}$ : Dummy indicator wheter $i$ is a part of experiment $j$
 
 <img src = "/assets/img/blog/session2/6.png" >  
@@ -103,7 +104,7 @@ $\theta \equiv E_{ij}(Y^{1}_{ij} - Y^{0}_{ij} | D_{ij} = 1)$ 입니다.
 
 모든 실험 j는 무작위 실험이기 때문에 처리 군과 대조군을 비교하면 실험 제안 j를 대상으로 한 집단에 대한 실험 별 처리 효과의 편견없는 추정치를 얻을 수 있습니다.
 
-$\theta_j \equiv E_{i}(Y^{1}_{ij} - Y^{0}_{ij} | D_{ij} = 1)$  
+$\theta_j \equiv E_{i}(Y_{ij}^1 - Y_{ij}^0 \mid D_{ij} = 1)$  
 $\theta_j$ 의 sampling distribution이 정규분포라 할때, $\theta_j \sim N(\hat\theta_j, \hat\sigma^2_j)$  
 $\theta =\dfrac{\sum n_j\theta_j} {\sum n_j} \sim N \left( \dfrac{\sum n_j\hat\theta_j} {\sum n_j}, \dfrac{\sum n^2_j\hat\sigma^2_j} {(\sum n_j)^2}\right) $  
 $n_j$ : number of individuals in experiment j
