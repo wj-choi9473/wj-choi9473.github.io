@@ -5,8 +5,8 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Sep 2020 23:38:01 +0900</pubDate>
-    <lastBuildDate>Thu, 17 Sep 2020 23:38:01 +0900</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2020 23:55:25 +0900</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2020 23:55:25 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -1632,14 +1632,41 @@ array([1.5, 2. , 3. , 4. , 5. , 6. , 7. ])
 &lt;/table&gt;
 
 &lt;h3 id=&quot;비교-연산comparison-operators&quot;&gt;비교 연산(Comparison Operators)&lt;/h3&gt;
-&lt;p&gt;|연산자|비교 범용 함수|
-|—|—|
-|==|np.equal|
-|!=|np.not_equal|
-|&amp;lt;|np.less|
-|&amp;lt;=|np.less_equal|
-|&amp;gt;|np.greater|
-|&amp;gt;=|np.greater_equal|&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Operators&lt;/code&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;universal functions&lt;/code&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;np.equal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;np.not_equal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;|&lt;/code&gt;np.less&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;np.less_equal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;np.greater&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;np.greater_equal&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h3 id=&quot;배열-정렬&quot;&gt;배열 정렬&lt;/h3&gt;
 
