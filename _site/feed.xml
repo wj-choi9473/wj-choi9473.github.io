@@ -5,8 +5,13 @@
     <description>Growth hacking and Problem solving</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <pubDate>Tue, 01 Sep 2020 00:52:54 +0900</pubDate>
     <lastBuildDate>Tue, 01 Sep 2020 00:52:54 +0900</lastBuildDate>
+=======
+    <pubDate>Sun, 13 Sep 2020 02:30:29 +0900</pubDate>
+    <lastBuildDate>Sun, 13 Sep 2020 02:30:29 +0900</lastBuildDate>
+>>>>>>> 24c5c936259264af9634e8f3c5dfde97bc46d7c1
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -349,11 +354,11 @@ $\frac{n!}{k!(n-k)!} = {n \choose k}$
 
 </description>
         <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/cheatsheets/markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/cheatsheets/markdown/</guid>
+        <link>http://localhost:4000/%EC%A0%95%EB%A6%AC/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/%EC%A0%95%EB%A6%AC/markdown/</guid>
         
         
-        <category>Cheatsheets</category>
+        <category>정리</category>
         
       </item>
     
