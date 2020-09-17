@@ -1,0 +1,905 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까? - Data Journey</title>
+<meta name="description" content="Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field Experiments Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)">
+
+
+  <meta name="author" content="Wonjae Choi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data Journey">
+<meta property="og:title" content="각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?">
+<meta property="og:url" content="http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/">
+
+
+  <meta property="og:description" content="Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field Experiments Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonjae Choi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Data Journey Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Data Journey
+          <span class="site-subtitle">Growth hacking and Problem solving</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#%EB%85%BC%EB%AC%B8" itemprop="item"><span itemprop="name">%eb%85%bc%eb%ac%b8</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Wonjae Choi" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonjae Choi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>제 다양한 생각, 책, 논문등을 정리하며 필요한 역량을 채우기 위해 공부해 나가는 과정을 공유할 예정입니다. <br /> 글에서 잘못된 부분, 수정했으면 하는 부분, 그 외에 의견이 있을 시 알려주신다면 감사하겠습니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:wj.choi9473@kaist.ac.kr">
+            <meta itemprop="email" content="wj.choi9473@kaist.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/wonjae-choi-92b567179" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/wj-choi9473" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?">
+    <meta itemprop="description" content="Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field ExperimentsNavdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)">
+    <meta itemprop="datePublished" content="2020-09-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        6 minute read
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#do-targeted-discount-offers-serve-as-advertising-evidence-from-70-field-experiments">Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field Experiments</a>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#empirical-setting-and-data">Empirical Setting and Data</a></li>
+      <li><a href="#empirical-approach">Empirical Approach</a></li>
+      <li><a href="#results">Results</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="do-targeted-discount-offers-serve-as-advertising-evidence-from-70-field-experiments">Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field Experiments</h1>
+<p>Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)</p>
+
+<p>마케팅 모형론 첫시간에 case study로 다뤘던 promotional e-mail에 과 같이 이메일로 보낸 프로모션세일 대한 연구를 한 페이퍼입니다.
+첫시간에는 이메일을 얼마나 보내는게 좋은지에 대한 고민이었다면
+여기 저자들은 프로모션 세일을 오퍼하는 이메일이 과연 어떤 효과가 있는지를 보는 페이퍼 입니다.</p>
+<ul>
+  <li>Authors Research Questions
+    <ul>
+      <li>Can targeted discount offers be profitable for a firm?</li>
+      <li>Can the offers serve as advertising messages?</li>
+    </ul>
+  </li>
+</ul>
+
+<p>첫시간 이메일 케이스 스터디에선 reverse causality 와 sample selection 문제가 있었는데 이 저자들은 그런 문제들을 어떻게 해결했는지 보도록 하겠습니다.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<ul>
+  <li>E-mail marketing
+    <ul>
+      <li>Vehicles for promotional discounts or coupons for price discrimination</li>
+      <li>Targeted discount offer as an advertising</li>
+    </ul>
+  </li>
+  <li>May cause selection bias because of nature of E-mail marketing
+    <ul>
+      <li>Consumer who opt-in and opt-out might be different</li>
+      <li>It is targeted</li>
+    </ul>
+  </li>
+</ul>
+
+<p>우선 이메일 마케팅은 보통 일반적으로 가격차별을 위해 할인쿠폰을 발급하기 위한 수단으로 쓰일수 있고요, 저자들은 여기에 더해서 광고적인 효과도 있다고 합니다. 즉, 다음 구매에 이 회사의 제품으로 구매하게 하는 효과를 볼 수 가 있습니다.</p>
+
+<p>하지만 이메일 마케팅 특성상 selection bias가 생길수있는데요,  왜냐하면 전체 집단을 보려하면 이메일 마케팅 수신 동의를 한 소비자와 안한 소비자의 특성이 다를 수 있고 , 이메일 수신을 동의한 소비자들 사이에서도 자주 구매하는지 등 행동 특성에 따라 타게팅을 다르게 할 수 있기 때문입니다.</p>
+
+<h2 id="empirical-setting-and-data">Empirical Setting and Data</h2>
+
+<p><img src="/assets/img/blog/session2/1.png" />
+저자들은 이문제를 전체적인 소비자를 본것이 아닌 마케팅 수신메일을 동의한 소비자들중 targeted 된 소비자들을 랜덤하게 홍보메일을 보내는 그룹과 안보내는 그룹으로 나누어 70개의 실험(즉, 프로모션 캠페인)으로 해결하였습니다.</p>
+
+<p><img src="/assets/img/blog/session2/2.png" />
+전체 샘플 집단에서 옵트인 한 그룹만을 가져 온 이유는
+전체 샘플 집단과 옵트인한 그룹을 비교해 봤을때 이메일을 받은 정도는 비슷하지만 표에 나와있는 특성들, expenditure and transactions per year 과 같은 특성들이 통계적으로 다르다고 합니다. 즉, 저자들은 선택 편의의 문제를 해결 하며 두 집단을 비교하며 확실히 합니다.</p>
+
+<p><img src="/assets/img/blog/session2/3.png" />
+데이터를 더 자세히 보면, 프로모션 기간은 보통 이주에서 한달 사이에 다 끝났고 총 122개의 프로모션 캠페인중 76개의 캠페인이 treatment 와 control을 준 캠페인이고 그 중에서 6개의 캠페인은 참가된 개인의 수가 100명이 안되어 제외하고 100명 이상을 참여시킨 캠페인 총 70개의 캠페인 데이터를 가지고 분석을 진행합니다.
+또한 피규어 2를 보시면 각 개인이 프로모션 안에 여러번 참여하게 될 수도 있다는 것을 보여줍니다.</p>
+
+<p><img src="/assets/img/blog/session2/4.png" />
+그 뒤, 정말 treatment group이랑 control group간 randomization이 잘 되었는지 체크하기 위해
+두가지 점검을 하는데요<br />
+처음엔 여러 특성들을 비교검정를 합니다 총 71445 개의 instance중(개인이 중복거래도 포함) 61377이 프로모션캠페인이메일을 받고 10068이 컨트롤 그룹으로 되었습니다. <br />
+각각의 특성들을 비교 하고 동일하다는 귀무가설을 거부할 수가 없어 두 그룹은 같다고 가정하며</p>
+
+<p>두번째 점검으로 각 캠페인에 대한 dummy indicator를 넣어 70개 캠페인의 고졍효과로 회귀분석을 실행했을시에도 인구통계나 과거transaction이 통계적으로 유의한 계수는 없는걸 보여줘 실험에 참가한 각 개인은 무작위 할당이라는 기업의 주장(저자들의 가정)을 뒷받침 합니다.</p>
+
+<p><img src="/assets/img/blog/session2/5.png" /><br />
+그 외에도 테이블 4를 보시면 회사가 각 개인별로 RFM 을 측정해 타겟팅을 했다는 증거와<br />
+(Rfm은 r recency 마지막거래로부터 날짜 days f 는 frequency 오퍼전에 얼마나 많은 거래를 했는지 m은 monetary로 돈을 얼마나 썻는지를 나타냄)</p>
+
+<p>테이블 6을 보면 Redemption rate, 즉 오퍼받은 사람들중 얼마나 그 프로모션을 썻는지에 대한 비율이 0.1%대로 굉장히 작다는걸 알 수 있습니다.</p>
+
+<p>또한, 피규어 3을 보시면 평균지출의 분포가 오퍼를 받은 그룹의 spending 분포가 더 돈을 많이 썻다는걸 볼 수 있습니다.</p>
+
+<p>이러한 데이터 분석을 한 이후 Empirical Approach단계로 갑니다.</p>
+
+<h2 id="empirical-approach">Empirical Approach</h2>
+
+<p>우선 empirical approach를 하기에 앞서 저자들은 플랫폼이 운영하는 실험에 참여한 적이 없는 개인에게 이러한 프로모션이 미치는 여향은 추정 못한다고 하였습니다. 어찌보면 당연한 이야기지요.</p>
+
+<p>저자들이 보고자 하는것은 프로모션을 받은 개인의 개인이 프로모션 이메일을 받았을때와 안받았을때의 차의 평균 지출을 보고자 합니다. <br />
+수식으로 표현 하자면<br />
+$\theta \equiv E_{ij}(Y^{1}<em>{ij} - Y^{0}</em>{ij} | D_{ij} = 1)$ 입니다.</p>
+
+<ul>
+  <li>$\theta$ : Average treatment effect on the treated population</li>
+  <li>$i$ : Individual users indexing</li>
+  <li>$j$ : Experiment indexing</li>
+  <li>$Y^{1}<em>{ij} - Y^{0}</em>{ij}$ : Expenditures for $i$ in the presence and the absence of an offer</li>
+  <li>$D_{ij}$ : Dummy indicator wheter $i$ is a part of experiment $j$</li>
+</ul>
+
+<p><img src="/assets/img/blog/session2/6.png" /><br />
+두번째 포인트론 각 실험마다 treatment 그룹에 할당되는 개인의 비율이 다르다고 하였습니다. 
+피규어4를 보시면 70개의 실험에서 treatment propensity가 0.31 에서 0.97까지 크게 다른데 회사의 의사결정 때문일것이라고 합니다.
+왜냐면 사람들이 오퍼를 잘 받아들일 수도 있는데 안보내서 판매를 못하는 기회비용이 크기 때문입니다.</p>
+
+<p>그래서 데이터의 이러한 변동으로 인해 모든 실험 j에 대해 별도의 처리 효과 (θj)를 추정하여 θ를 추정하고 샘플 가중 평균 효과를 계산합니다.</p>
+
+<p>모든 실험 j는 무작위 실험이기 때문에 처리 군과 대조군을 비교하면 실험 제안 j를 대상으로 한 집단에 대한 실험 별 처리 효과의 편견없는 추정치를 얻을 수 있습니다.</p>
+
+<p>$\theta_j \equiv E_{i}(Y^{1}<em>{ij} - Y^{0}</em>{ij} | D_{ij} = 1)$<br />
+$\theta_j$ 의 sampling distribution이 정규분포라 할때, $\theta_j \sim N(\hat\theta_j, \hat\sigma^2_j)$<br />
+$\theta =\dfrac{\sum n_j\theta_j} {\sum n_j} \sim N \left( \dfrac{\sum n_j\hat\theta_j} {\sum n_j}, \dfrac{\sum n^2_j\hat\sigma^2_j} {(\sum n_j)^2}\right) $<br />
+$n_j$ : number of individuals in experiment j</p>
+
+<h2 id="results">Results</h2>
+
+<p>Empirical appporach 에서 접근한 방식대로 샘플데이터에 대해서 회귀식을 돌리는데요</p>
+
+<p>$y_{ij} = \alpha_j + \theta_{j}T_{ij} + \epsilon_{ij}$</p>
+<ul>
+  <li>$\theta_j$ : For all 𝑗 are estimated jointly and the standard errors are robust, clustered by individual</li>
+  <li>$T_{ij}$ : Wheter individual $i$ was in the treatment group for experimental campaign $j$</li>
+</ul>
+
+<p>첫째로는, 오퍼 즉 프로모션이 유효했던 기간 동안 프로모션이  개인의 지출에 미치는 영향에 을 알아보려합니다.</p>
+
+<p>즉, 오퍼가 플랫폼에서 개인에게 구매를 유도할 수 있다면, 오퍼를 안받는 개인에 비해 제안을 받는 개인에 대한 지출이 증가하는 것을 보아야 합니다.</p>
+
+<p><img src="/assets/img/blog/session2/7.png" /></p>
+
+<p>테이블 7을 보시면 결과를 확인할 수 있는데요<br />
+오퍼가 유효할때 타겟된 개인들에게 평균 3.03 의 지출을 더 하게 하고 퍼센트로 따지자면 37% 의 지출을 늘리는것으로 확인이 됩니다.</p>
+
+<p>즉, 저자들의 첫번째 리서치 퀘스쳔에 대한 답을 알 수 있었습니다.</p>
+
+<p><img src="/assets/img/blog/session2/8.png" /> 
+테이블 9는 방금전의 식에 개인의 rfm 특성을 넣은 회귀분석 결과로 
+여기서 주목할 점은,<br />
+최근에 거래하지 않은 개인에게 큰 영향을 미침 -&gt; 2번째 리서치 퀘스쳔의 대한 답으로 볼 수 있는 가격차별요소뿐만 아닌  reminder effect를 볼 수 있다는 것 입니다.</p>
+
+<p><img src="/assets/img/blog/session2/9.png" /> 
+피규어 5는 결과를 시각화 해서 보여준것인데요</p>
+
+<p>타게팅될 확률과 오퍼의 효과는 모두 f와 m에 따라 증가합니다. 즉, 웹 사이트에서 더 많,더 자주 지출 한 개인은 제안에 더 많이 반응하고 회사는 제안으로 이들을 목표로 삼을 가능성이 더 높습니다.</p>
+
+<p>그러나 타게팅 전략과 오퍼 효과 사이의 이러한 일관성은 r에 없습니다. 제안은 1 사분 위와 2 사 분위 (비교적으로 최근에 웹 사이트에서 거래 한 사람)의 개인에게 가장 효과적이지 않습니다.</p>
+
+<p>하지만 회사는 2 사 분위의 개인에게 제안을 보낼 가능성이 가장 높습니다. 방향적으로 회사는 최근 거래자들에게 제안을 보내지 않는 전략을 따르는 것처럼 보이지만, 이 시각화는 마지막 거래 이후 일수 기준으로 중앙값을 넘는, 즉 구매한지 오래된 소비자에게 더 많은 제안을 보내면 더 많은 혜택을 얻을 수 있음을 알려줍니다.</p>
+
+<p>지금까지의 결과를 보면 프로모션이 가격차별도 있지만 광고고효과인걸 볼 수 있는데요</p>
+
+<p>두번째 분석으로 저자들은 두번째 리서치 퀘스쳔이자 첫번째 결과에서 본 광고효과에 대해 측정을 합니다.</p>
+
+<p>오퍼가 광고효과, 즉 플랫폼에서 이용할 수 있는 서비스를 상기시키는 역할을 하면, 그 제안이 발송된 시점부터 경과한 시간에 따라 그 영향이 감소 할 수 있다고 합니다.</p>
+
+<p>이를 확인하기위해 저자들은 프로모션이 만료된 후에도 개인이 더 많은 지출을 하는지 프로모션이 만료된 후 트리트먼트와 컨트롤 조건에서 개인에 대한 지출을 비교합니다.</p>
+
+<p>$\tilde Y_{ij} = \alpha_j + \tilde \theta_{j}T_{ij} + \epsilon_{ij} $<br />
+$\tilde Y_{ij}$ :$i$’s total expenditure during a period after offer $j$ expires</p>
+
+<p><img src="/assets/img/blog/session2/10.png" /> 
+피규어 6을 보시면 결과로 프로모션이 만료된 후에도 할인을 받을 수 없는데 지출이 증가하는걸 볼 수 있습니다.</p>
+
+<p>그렇지만 소비자들이 정말 오퍼를 받음으로 기억을 해 나중에 구매하는지는 정확히 알 수 없지만 개인의 carryover effects는 확인 할 수 있는데요, 그래서 다시 프로모션 기간에 구매를 했는지 더미변수를 넣어 확인하였고 테이블10의 결과 표를 보시면 프로모션이 유효한 동안 거래 한 개인이 거래를했지만 오퍼을받지 못한 개인보다 제안 후 주에 지출 할 가능성이 더 높다고 저자들은 해석했습니다.
+<img src="/assets/img/blog/session2/11.png" /></p>
+
+<p>그 다음으로 이메일이 전송된 후 시간이 지남에 따라 오퍼의 효과가 어떻게 감소하는지를 살펴보았는데요, 
+프로모션 오퍼가 발송 된 후 3개월 동안 매주 트리트먼트 그룹과 컨트롤그룹간의 지출 차이를 추정합니다.
+피규어 7은 그 추정을 시각화 하였는데요, 처음 4 주 동안 트리트먼트 그룹이 컨트롤 그룹보다 더 많이 지출 하는걸 볼 수 있습니다(3주차 제외). 
+<img src="/assets/img/blog/session2/12.png" /></p>
+
+<p>그 다음으론  오퍼의 종류가 다른 섹션의 티켓 판매에도 영향을 미치는지를 조사하는데요, 
+언급하진 않았지만 데이터는 스텁허브 같인 티켓리셀링 플랫폼에서 얻은 데이터 인데요, 할인 프로모션에서 대부분 MLB티켓은 할인에서 제외를 한 오퍼가 많았습니다.</p>
+
+<p>만약 오퍼가 다른 섹션의 티켓 판매에도 광고효과로 긍정적인 영향을 보인다면 MLB의 티켓 구매도 증가 할 수있다고 볼 수 있습니다. 테이블 11을 보신다면, 평균적으로 4.04 달러의 지출이 증가하고 mlb 티켓이 오퍼가 제외되어도 그냥 지출도 증가하고 전에 구매한 이력이 있다면 지출이 더 증가 한걸 볼 수 있습니다.
+그러므로 저자들은 두번째 리서치 퀘스쳔인 광고효과가 있는걸 보여주는걸로 마무리를 합니다.<br />
+$y_{ij} = \alpha_j + \delta_{j}T_{ij} \times PastMLB_{ij} + \gamma_{j}PastMLD_ij + \epsilon_ij$
+<img src="/assets/img/blog/session2/13.png" /></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#%EB%85%BC%EB%AC%B8" class="page__taxonomy-item" rel="tag">논문</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-15T00:00:00+09:00">September 15, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B0%81+%EA%B3%A0%EA%B0%9D%EB%93%A4%EC%9D%84+%ED%83%80%EA%B2%8C%ED%8C%85%ED%95%9C+%ED%95%A0%EC%9D%B8%EC%BF%A0%ED%8F%B0%EC%9D%B4+%EA%B4%91%EA%B3%A0%EC%9D%98+%ED%9A%A8%EA%B3%BC%EB%8F%84+%EC%9E%88%EC%9D%84%EA%B9%8C%3F%20http%3A%2F%2Flocalhost%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%2FDo-Targeted-Discount-Offers-Serve-as-Advertising_%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%2FDo-Targeted-Discount-Offers-Serve-as-Advertising_%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25EB%2585%25BC%25EB%25AC%25B8%2FDo-Targeted-Discount-Offers-Serve-as-Advertising_%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/" class="pagination--pager" title="Introduction to Causal Inference
+">Previous</a>
+    
+    
+      <a href="/%EB%A7%88%EC%BC%80%ED%8C%85/Session2_Field-Experiment/" class="pagination--pager" title="Field Experiment
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%A7%88%EC%BC%80%ED%8C%85/Session2_Field-Experiment/" rel="permalink">Field Experiment
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        5 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Experiments and Generalized causal inference
+Shadish, Cook &amp; Campbell (2002) CH_1
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/" rel="permalink">Introduction to Causal Inference
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        5 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">이 포스팅은 카이스트 경영대학 윤태중 교수님의 마케팅 모형론 수업을 들으며 정리한 것입니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/NumPy/" rel="permalink">NumPy 정리
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        16 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">NumPy란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/" rel="permalink">논문 읽는법
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">대학원에 진학해 한학기동안 있으면서 배우고 느낀점은 가장 다음과 같습니다.
+
+  논문을 통해 지식을 얻는 습관
+  과학적 방법론으로 문제를 해결하는 경험
+  일방적인 주입, 무조건 적인 수용이나 배격이 아닌 과학적 검증 체계를 통한 지식습득 습관
+즉, 스스로 생각하는힘을 많이 기르...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Wonjae Choi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/%EB%85%BC%EB%AC%B8/Do Targeted Discount Offers Serve as Advertising_"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://wonjaechoi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

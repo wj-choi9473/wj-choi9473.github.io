@@ -1,0 +1,1098 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introduction to Causal Inference - Data Journey</title>
+<meta name="description" content="이 포스팅은 카이스트 경영대학 윤태중 교수님의 마케팅 모형론 수업을 들으며 정리한 것입니다.">
+
+
+  <meta name="author" content="Wonjae Choi">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Data Journey">
+<meta property="og:title" content="Introduction to Causal Inference">
+<meta property="og:url" content="http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/">
+
+
+  <meta property="og:description" content="이 포스팅은 카이스트 경영대학 윤태중 교수님의 마케팅 모형론 수업을 들으며 정리한 것입니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-08T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Wonjae Choi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Data Journey Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$'] ],
+    processEscapes: true,
+  }
+});
+MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+	  alert("Math Processing Error: "+message[1]);
+	});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Data Journey
+          <span class="site-subtitle">Growth hacking and Problem solving</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#%EB%A7%88%EC%BC%80%ED%8C%85" itemprop="item"><span itemprop="name">%eb%a7%88%ec%bc%80%ed%8c%85</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Introduction to Causal Inference</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Wonjae Choi" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Wonjae Choi</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>제 다양한 생각, 책, 논문등을 정리하며 필요한 역량을 채우기 위해 공부해 나가는 과정을 공유할 예정입니다. <br /> 글에서 잘못된 부분, 수정했으면 하는 부분, 그 외에 의견이 있을 시 알려주신다면 감사하겠습니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:wj.choi9473@kaist.ac.kr">
+            <meta itemprop="email" content="wj.choi9473@kaist.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/wonjae-choi-92b567179" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/wj-choi9473" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to Causal Inference">
+    <meta itemprop="description" content="이 포스팅은 카이스트 경영대학 윤태중 교수님의 마케팅 모형론 수업을 들으며 정리한 것입니다.">
+    <meta itemprop="datePublished" content="2020-09-08T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introduction to Causal Inference
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        5 minute read
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#causal-inference-란">Causal Inference 란?</a></li>
+  <li><a href="#case-study">Case Study</a>
+    <ul>
+      <li><a href="#promotional-e-mail-frequency">Promotional E-mail Frequency</a>
+        <ul>
+          <li><a href="#interpretation-is-as-inportant-as-analysis">Interpretation is as inportant as analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="#비즈니스에서-좋은-분석이-어려운-이유">비즈니스에서 좋은 분석이 어려운 이유</a>
+        <ul>
+          <li><a href="#fundamental-conflict">Fundamental Conflict</a></li>
+          <li><a href="#data-generating-process">Data-generating process</a>
+            <ul>
+              <li><a href="#check-list">check-list</a></li>
+            </ul>
+          </li>
+          <li><a href="#원인파악-효과측정을-위해-제일-좋은-방법은">원인파악/ 효과측정을 위해 제일 좋은 방법은?</a>
+            <ul>
+              <li><a href="#randomized-control-test">Randomized Control Test</a></li>
+            </ul>
+          </li>
+          <li><a href="#공부-및-참고-하면-좋을거-같은-자료들">공부 및 참고 하면 좋을거 같은 자료들</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>이 포스팅은 카이스트 경영대학 윤태중 교수님의 마케팅 모형론 수업을 들으며 정리한 것입니다.</p>
+
+<p>사설 강의/책 에서 데이터 분석/데이터 사이언스라고 하며 주로 가르치는건 프로그래밍, 분류/예측, 텍스트마이닝 등등 멋져보이고 재미있어 보이는걸 가르쳐 줍니다. (물론 이런것도 당연히 중요하다고 생각합니다) 하지만 그전에 먼저 알아두어야 하고, 실제 일을 할 때, 의사 결정을 위해 더 중요하고 필요하다고 생각하는건 인과 관계를 제대로 설명하는것 이라고 생각하게 되었습니다. (머신러닝과 방향성이 좀 다르긴 하지만!)</p>
+
+<p>데이터분석은 인과 관계를 바탕으로 스토리텔링 하는 것이고 데이터에 기반한 분석의 힘을 실어 주으려면 개연성이 필요합니다. 즉, 납득할 수 있는 명확한 인과관계를 보여주는 것이 연구자로서 혹은 데이터 분석가로서 중요하다고 생각하게 되었습니다.</p>
+
+<h1 id="causal-inference-란">Causal Inference 란?</h1>
+
+<p>인과 관계추론 이라 하며 마케팅 액션이 있으면 그 효과를 판단하기 위해서 measure 하는것 또는 원인 파악을 위한 것입니다.</p>
+<ul>
+  <li>원인 찾기 ex) 왜 갑자기 DAU가 떨어졌지?</li>
+  <li>효과 측정하기 ex) 정책의 효과</li>
+</ul>
+
+<p>최근에 핫한 이슈인 공공의대 정책을 예로 과연 지방의료의 현실이 좋아질것이냐 아닐것이냐 를 볼때(그저 예시 입니다!)</p>
+
+<p>input - 지방에 의사 확대 outcome - 효과 측정을 위한 measure을 정하고 (지방에 분만율이 어떻게 되느냐, 지방 환자의 사망률이 낮아지느냐 등 도메인 전문가와 상의해서 정해야겠지요? ) 
+이런 인과 추론을 하는데 있어서 실험실이 아닌 실생활이라 딱 공공의대 정핵의 순수한 효과만 보고 싶지만 경제사정이라던가 지방에 병원의 숫자도 달라질수도 있고 이러한 각종 요인들이 outcome에 영향을 주기 때문에 이러한 요인을 최대한 제거하고 봐야합니다.</p>
+
+<h1 id="case-study">Case Study</h1>
+
+<h2 id="promotional-e-mail-frequency">Promotional E-mail Frequency</h2>
+
+<p>디지털 마케팅 부서장은 제품담당 팀에서 소비자들에게 너무 많은 메일 보내는게 고민입니다. 광고성 이메일을 고객에게 보내는 빈도수를 설문조사에 따르면 고객들은 이메일을 너무 많이 받고 있다고 하고, 이멜을 많이 받을 수록 campaign clickrate이 낮아지는 자료를 찾아서 의견을 냈습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>All consumers</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>메일 너무 많이 받음</td>
+      <td>72%</td>
+    </tr>
+    <tr>
+      <td>메일 적당히 받음</td>
+      <td>21%</td>
+    </tr>
+    <tr>
+      <td>메일 별로 안받음</td>
+      <td>7%</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>top 25% 매출을 내는 consumer</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>메일 너무 많이 받음</td>
+      <td>82%</td>
+    </tr>
+    <tr>
+      <td>메일 적당히 받음</td>
+      <td>12%</td>
+    </tr>
+    <tr>
+      <td>메일 별로 안받음</td>
+      <td>5%</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>bottop 25% 매출을 내는 consumer</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>메일 너무 많이 받음</td>
+      <td>32%</td>
+    </tr>
+    <tr>
+      <td>메일 적당히 받음</td>
+      <td>56%</td>
+    </tr>
+    <tr>
+      <td>메일 별로 안받음</td>
+      <td>12%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>반대로 스포츠용품 부서장은 광고성 이메일 빈도수를 규제하지 않고 그대로 하자는 주장을 준비하기로 했습니다. 그는 자신의 주장을 뒷받침할 증거가 있는지 과거 구매 자료를 조사하라고 팀에 요청을 했습니다. 특히 최근 12개월 동안 고객들의 주문 건수, 최근 12개월 동안의 총 달러 매출, 지난 주문 이후 시간 등 주요 지표와 관련된 이메일 빈도가 어떻게 연관되어 있는지 증거를 보고 싶어했습니다. 조사 결과 다음과 같은 분석결과를 가지고 이메일 빈도가 높을수록 주문건수, 매출, 지난 주문 이후 시간이 짧다는 주장을 했습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Number of orders during last 12 months</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avg. weekly e-mail freq: 0 - 1.9</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 2 - 3.9</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 4 or more</td>
+      <td>7.3</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Total sales during last 12 months</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avg. weekly e-mail freq: 0 - 1.9</td>
+      <td>$51</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 2 - 3.9</td>
+      <td>$254</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 4 or more</td>
+      <td>$518</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Time since last order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avg. weekly e-mail freq: 0 - 1.9</td>
+      <td>8.1 months</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 2 - 3.9</td>
+      <td>4.2 months</td>
+    </tr>
+    <tr>
+      <td>Avg. weekly e-mail freq: 4 or more</td>
+      <td>1.8 months</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="interpretation-is-as-inportant-as-analysis">Interpretation is as inportant as analysis</h3>
+
+<p>위 케이스는 두가지 문제를 가지고 있습니다.</p>
+<ol>
+  <li>광고성 메일이 소비자에 따라 어떻게 달라지는지, 다들 똑같은지 모릅니다.</li>
+</ol>
+
+<p>뭐가 원인이고 뭐가 outcome인지 생각해보자면</p>
+
+<p>마케팅 부서장은 이메일을 얼마나 많이 보내느냐에 따라 outcome이 소비자의 불만족이 될것이라 판단을 합니다.<br />
+스포츠용품 부서장은 원인과 결과를 서로 반대로 놓고 해석을 하였습니다.<br />
+스포츠용품 부서장은 email frequency가 원인, 구매가 outcome이라 했지만 조금만 생각해 보면 스포츠용품 부서장은 <code class="language-plaintext highlighter-rouge">reverse causality</code>를 범한걸 알 수 있습니다. 왜냐하면 이메일을 많이 받는 그룹은 일반적으로 이메일을 보낼 시 소비자를 타게팅(RFM모형 등을 이용)하는데 잠시만 생각해보면 물건을 살 수록 프로모션 메일이 많이 보내고 많은 혹은 비싼 물건을 구입한 고객일 수록 이멜을 많이 받는것이기 때문입니다.</p>
+
+<ol>
+  <li>마케팅 부서장이 모은 survey data는 <code class="language-plaintext highlighter-rouge">sample selection</code>을 하는데에 문제가 있습니다.</li>
+</ol>
+
+<p>현재 고객들을 대상으로 설문을 진행하였는데 이미 이메일을 많이 보내고 있는 시점이라 이메일에 짜증이 딱히 안나는 고객들만 남고 예민한 고객은 스팸차단, 이탈등을 했을 수도 있습니다. 그렇기에 실제 불만보다 적을 수도 있고 모르는 상황이 발생합니다. 즉 대표성을 못띄는 <code class="language-plaintext highlighter-rouge">selection bias</code>가 있다고 볼 수 있습니다.</p>
+
+<hr />
+
+<p>또한 소비자의 불만이 매출의 감소로 이어지는가?란 질문에 대한 답도 확실히 알 수 없습니다.
+과연 광고성 이메일에 frequency 가 매출에 영향이 있을까? 이것 또한 알 수 없습니다.</p>
+
+<hr />
+
+<h2 id="비즈니스에서-좋은-분석이-어려운-이유">비즈니스에서 좋은 분석이 어려운 이유</h2>
+
+<h3 id="fundamental-conflict">Fundamental Conflict</h3>
+<ul>
+  <li>비즈니스는 이익을 극대화하기위해 targeted decisions을 내립니다.
+    <ul>
+      <li>예로 광고는 더 살 확률이 높은 소비자에게 노출을 합니다</li>
+    </ul>
+  </li>
+  <li>분석의 gold standard는 experimentation 입니다.
+    <ul>
+      <li>그룹별 targeted가 아닌 randomly assigned 되야 합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>데이터분석을 위한 프로그래밍 능력이 아무리 좋아도 casual inference를 알아야 제대로 해석할 수 있습니다.<br />
+우리가 가지고 있는 데이터는 대부분 실험을 통한 데이터가 아닙니다.<br />
+예로, 광고는 targeted advertising을 합니다. 문제점은 여기서 나온 데이터로 타겟 광고를 받은 사람과 받지 않은 사람 두군을 나눠 구매비율을 비교하면 targeted 그룹이 이미 그 물건을 살 확률이 높으니 (여러 특징을 보고 살 확률이 높은 소비자를 타게팅 해서 광고를 보여주니) 단순히 그룹을 비교하기는 어렵습니다. 그래서 일반적으로 회사 데이터는 이러한 transaction으로 이루어진 데이터라 해석하는데 큰 어려움들이 발생합니다.</p>
+
+<p>그래서 casual inference가 기본이 되어 정확한 해석이 필요합니다.</p>
+
+<hr />
+<h3 id="data-generating-process">Data-generating process</h3>
+
+<p>현실에서는 우리가 가지고 있는 데이터가 실험에서 얻은게 아니기에 selection 문제가 있습니다. 
+그래서 data generating process, 즉 데이터가 어떻게 생성이 되었는지도 유심히 봐야합니다. (random assignment인지 아닌지 등)</p>
+
+<h4 id="check-list">check-list</h4>
+
+<ul>
+  <li>Are there pre-existing differences between groups?
+    <ul>
+      <li>i.e. “Could groups be probabilistically not equivalent?”</li>
+    </ul>
+  </li>
+  <li>Is there a common driver of both managerial decisions and outcomes?
+    <ul>
+      <li>i.e. “Are decisions and outcomes both responding to a common catalyst?”</li>
+    </ul>
+  </li>
+  <li>Is there reverse causality?
+    <ul>
+      <li>i.e. “Did managerial decisions cause outcomes to change, or was it outcomes that spurred managerial decisions?”</li>
+    </ul>
+  </li>
+  <li>Is there a plausible coincidence that could explain the outcome?
+    <ul>
+      <li>i.e. “What else might be going on?”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>모든 질문에 no라고 답할수 있어야 합니다.</p>
+
+<hr />
+<h3 id="원인파악-효과측정을-위해-제일-좋은-방법은">원인파악/ 효과측정을 위해 제일 좋은 방법은?</h3>
+<h4 id="randomized-control-test"><code class="language-plaintext highlighter-rouge">Randomized Control Test</code></h4>
+<p>그렇다면 어떤식으로 해야 이 문제를 풀 수 있을까요?
+모든 변수를 통제하고 email frequency만 변화를 모든사람들이 같은 갯수의 이메일을 받고 불만을 측정하면 되겠지요. 즉, 측정 하고자 하는 변수 이외에는 모든 것들을 고정시키고, 확인하고 싶은 항목만 변경해서 테스트를 하면 됩니다. <br />
+하지만 현실은 녹록치 않아서 다른 방법론이 많이 있습니다. 앞으로 배워갈 예정입니다 DID라던가…Matching Methods라던가…</p>
+
+<p>DID의 개념을 간략히 설명하자면 완전한 실험을 못하니 준실험적 방법중 하나라 알 수 있습니다.<br />
+두 집단의 difference 를 difference한 두 시기로 비교해보는 것입니다.</p>
+
+<p>예로 subscription에 가입하게하는 프로모션을 통해 소비자의 LTV를 측정한다 하였을때 어떻게 효과를 알 수 있을까를 보자면</p>
+
+<ul>
+  <li>Pick2geographicregions(byZIP,regionalsalesoffice,etc.)</li>
+  <li>Pick2timeperiods(byweek,month,etc.)</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">Region1</th>
+      <th style="text-align: right">Region2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Period1</td>
+      <td style="text-align: right">Outcome in Region1 <br />before test</td>
+      <td style="text-align: right">Outcome in Region2 <br />before test</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Period2</td>
+      <td style="text-align: right">Outcome in Region1 <br />before test</td>
+      <td style="text-align: right">Outcome in Region2 <br />before test</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이렇게 나누어서 측정을 한 뒤</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">Region1</th>
+      <th style="text-align: right">Region2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Period1</td>
+      <td style="text-align: right">Control Group1 <br />Avg.LTV $350</td>
+      <td style="text-align: right">Control Group2 <br />Avg.LTV $390</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Period2</td>
+      <td style="text-align: right">Control Group3 <br />Avg.LTV $320</td>
+      <td style="text-align: right">Target Group <br />Avg.LTV $400</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>seasonal effect로 $30 (350 - 320)의 차이</p>
+  </li>
+  <li>
+    <p>regions 에 따른 차이(각 객체의 특성)로 $40 (350 - 390)</p>
+  </li>
+</ul>
+
+<p>차이들이 있다면 이를 제거하면 순수한 프로모션틀 통한 LTV의 outcome을 알 수 있을 것입니다.</p>
+
+<p>즉, seasonal effect의 차이를 제거하기 위해 (Target group-control group2)-(control group3-control group1) = 10 -(-30) = $40 입니다.</p>
+
+<p>또한, regions에 따른 차이를 제거하기 위해 (Target Group - Control Group3)-(Control Group2 - Control Group1) = 80 - 40 = $40 입니다.</p>
+
+<h3 id="공부-및-참고-하면-좋을거-같은-자료들">공부 및 참고 하면 좋을거 같은 자료들</h3>
+
+<p>Causal Inference 에 대한 자료를 찾다보니 카카오 데이터 분석가 이민호님의 <a href="https://www.slideshare.net/lumiamitie/causal-inference-primer-20190601?ref=https://lovablebaby1015.wordpress.com/2019/06/04/causal-inference-%EC%9D%B8%EA%B3%BC%EA%B4%80%EA%B3%84%EC%B6%94%EB%A1%A0/">발표자료</a>도 발견했는데 인사이트를 얻기 좋은거 같습니다.</p>
+
+<p>또한,  NC소프트 데이터분석팀의 <a href="https://danbi-ncsoft.github.io/Posts/">기술블로그</a>에서 인과관계를 찾아서란 시리즈를 발견했습니다. 그 외에도 좋은 인사이트가 많습니다.</p>
+
+<p>공부하고 읽어 보기 좋은 책들</p>
+<ul>
+  <li>고수들의 계량경제학 (대체로 해롭지 않은 계량경제학의 쉬운버전 입니다)</li>
+  <li>대체로 해롭지 않은 계량경제학</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#%EB%A7%88%EC%BC%80%ED%8C%85" class="page__taxonomy-item" rel="tag">마케팅</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-08T00:00:00+09:00">September 8, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+Causal+Inference%20http%3A%2F%2Flocalhost%3A4000%2F%25EB%25A7%2588%25EC%25BC%2580%25ED%258C%2585%2FSession1_Introduction-to-Casual-Inference%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EB%25A7%2588%25EC%25BC%2580%25ED%258C%2585%2FSession1_Introduction-to-Casual-Inference%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25EB%25A7%2588%25EC%25BC%2580%25ED%258C%2585%2FSession1_Introduction-to-Casual-Inference%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%EC%A0%95%EB%A6%AC/NumPy/" class="pagination--pager" title="NumPy 정리
+">Previous</a>
+    
+    
+      <a href="/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/" class="pagination--pager" title="각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%A7%88%EC%BC%80%ED%8C%85/Session2_Field-Experiment/" rel="permalink">Field Experiment
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        5 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Experiments and Generalized causal inference
+Shadish, Cook &amp; Campbell (2002) CH_1
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%85%BC%EB%AC%B8/Do-Targeted-Discount-Offers-Serve-as-Advertising_/" rel="permalink">각 고객들을 타게팅한 할인쿠폰이 광고의 효과도 있을까?
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        6 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Do Targeted Discount Offers Serve as Advertising? Evidence from 70 Field Experiments
+Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%A0%95%EB%A6%AC/NumPy/" rel="permalink">NumPy 정리
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        16 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">NumPy란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8C%80%ED%95%99%EC%9B%90/gradtip/" rel="permalink">논문 읽는법
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 minute read
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">대학원에 진학해 한학기동안 있으면서 배우고 느낀점은 가장 다음과 같습니다.
+
+  논문을 통해 지식을 얻는 습관
+  과학적 방법론으로 문제를 해결하는 경험
+  일방적인 주입, 무조건 적인 수용이나 배격이 아닌 과학적 검증 체계를 통한 지식습득 습관
+즉, 스스로 생각하는힘을 많이 기르...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Wonjae Choi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction-to-Casual-Inference/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/%EB%A7%88%EC%BC%80%ED%8C%85/Session1_Introduction to Casual Inference"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://wonjaechoi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
