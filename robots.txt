@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wj-choi9473.github.io/sitemap.xml
