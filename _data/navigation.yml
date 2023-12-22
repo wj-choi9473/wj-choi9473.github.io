@@ -1,7 +1,15 @@
-# main links
+# main links 우측 상단 네비게이션바
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    - title: "About"
+      url: /about/
+    - title: "Categories"
+      url: /categories/
+    - title: "CheatSheet"
+      url: /cheatsheet/
+    - title: "Search"
+      url: /search/
+  #- title: "Quick-Start Guide"
+  #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
