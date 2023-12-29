@@ -18,7 +18,7 @@ toc_label: Table of contents
 
 ---
 
-중간중간 틀린 표현, 오타, 정보가 있을 시 알려주시면 감사하겠습니다.
+Please let me know if you find any mispresentations, typos, or information along the way.
 {: .notice}
 
 # Econometrics in Python
