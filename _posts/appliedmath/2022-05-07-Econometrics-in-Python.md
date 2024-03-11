@@ -11,6 +11,10 @@ redirect_from:
 
 ---
 
+$y_{it}= \beta X_{it}$
+
+$$y_{it}= \beta X_{it}$$
+
 Please let me know if you find any mispresentations, typos, or information along the way.
 {: .notice}
 
