@@ -1,8 +1,8 @@
 ---
 
-title: "Econometrics in Python"
+title: "[Econometrics] Econometrics in Python"
 categories: 
-  - Math and Stat with programming
+  - Applied Math
 tag: cheatsheet
 last_modified_at: 2023-12-18
 use_math: true
