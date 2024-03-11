@@ -48,7 +48,7 @@ plt.xlabel("Marketing Costs (in 10,000,000₩)")
 plt.ylabel("App Download (in 1,000)")
 ```
 
-<img src = "/assets/images/posts/appliedmath/2022-05-07-Econometrics-in-Python/example.png" >
+<img src = "/assets/images/posts/appliedmath/2022-05-07-Econometrics-in-Python/example.png">{: .align-center}
 
 ## Data prep using patsy (and R-style formula)
 
