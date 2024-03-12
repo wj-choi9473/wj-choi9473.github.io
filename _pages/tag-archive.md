@@ -1,7 +1,7 @@
 ---
-title: "cheatsheet"
+title: "Tags"
 layout: tags
-permalink: /cheatsheet/
+permalink: /tags/
 author_profile: true
 sidebar_main: true
 ---
