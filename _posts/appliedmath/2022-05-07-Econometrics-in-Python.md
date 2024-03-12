@@ -7,7 +7,7 @@ tag: cheatsheet
 last_modified_at: 2023-12-18
 #comments: true
 redirect_from:
-    - /Applied Math/Econometrics-in-Python
+    - /Applied Math/[Econometrics] Econometrics in Python
 
 ---
 
