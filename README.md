@@ -77,10 +77,3 @@ minimal-mistakes
 admin page로 게시글을 쉽게 작성할 수 있음  
 - Gemfile 파일에  gem ```'jekyll-admin', group: :jekyll_plugins``` 추가후 bundle install
 - http://localhost:4000/admin 에 접속해서 게시물 쉽게 작성가능
-
-### Latex tip
-지킬에서 일부 latex문법이 지원되지 않으므로 식이 깨질때가 많음.
-보통 깨지던 이유 보자면
-1. ```|``` vertical var 를 그대로 사용하면 그렇다. ```\mid``` 나 원하는 vertical bar형태로 바꿀것
-2. 식의 순서를 표현하기 위해 ```\tag{1}``` 를 사용하는데 이러면 또 깨진다... 그냥 ```.......(1)```  요런식으로 표현할것.
-3. exponential 표현할때 e^x 가 깨지니 \exp(x) 사용
