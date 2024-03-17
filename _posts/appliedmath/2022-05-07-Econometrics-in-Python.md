@@ -17,9 +17,7 @@ redirect_from:
 Please let me know if you find any mispresentations, typos, or information along the way.
 {: .notice}
 
-기존 통계분석 및 계량분석에는 R, Stata 등을 많이 쓰고 패키지들도 잘되어 있습니다. 하지만 ml 모델이라던가, 확장성 측면에서 더 용이한거 같고 (회사에서 python을 쓰는 경우가 많다고 합니다.)
 
-그래서 실증분석 및 인과추론 관련하여 python에선 어떤 라이브러리가 있고, 어떻게 쓰면 되는지 간단한 팁들을 작성해보려 합니다.
 
 ## Visualization style
 
