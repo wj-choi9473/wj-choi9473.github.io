@@ -18,6 +18,8 @@ Please let me know if you find any mispresentations, typos, or information along
 {: .notice}
 
 
+기존 통계분석 및 계량분석에는 R, Stata, matlab 등을 많이 쓰나
+실증분석 및 인과추론 관련하여 python에선 어떤 라이브러리가 있고, 어떻게 쓰면 되는지 간단한 팁들을 작성해보려 합니다.
 
 ## Visualization style
 
