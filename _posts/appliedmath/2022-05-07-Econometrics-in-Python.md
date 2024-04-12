@@ -14,16 +14,15 @@ redirect_from:
 
 ---
 
-Please let me know if you find any mispresentations, typos, or information along the way.
-{: .notice}
+파이썬에서 계량분석에 대해 어떤 기본적인 라이브러리가 있고, 어떻게 쓰면 되는지 간단한 팁들을 작성해보려 합니다.
+- Patsy: 데이터 전처리와 같은 작업
+- Statsmodels: 횡단면 및 시계열 데이터 분석 
+- Linearmodels: 패널데이터 분석
+- Stargazer: 결과 서머리표 (관리가 잘 안되고 있으며 Linearmodels는 지원 하지 않음)
 
+# Visualization style
 
-기존 통계분석 및 계량분석에는 R, Stata, matlab 등을 많이 쓰나
-실증분석 및 인과추론 관련하여 python에선 어떤 라이브러리가 있고, 어떻게 쓰면 되는지 간단한 팁들을 작성해보려 합니다.
-
-## Visualization style
-
-리서치 페이퍼, 리포트 등의 용도로 정적인 시각화를 할 때 가장 클래식한 그래프 스타일
+리서치 페이퍼, 리포트 등의 용도로 정적인 시각화를 할 때 가장 클래식한 기본 그래프 스타일은 다음과 같이 표현합니다.
 
 (참고 [matplotlib](https://matplotlib.org/2.0.2/users/colors.html) )
 
@@ -51,7 +50,7 @@ plt.ylabel("App Download (in 1,000)")
 
 <img src = "/assets/images/posts/appliedmath/2022-05-07-Econometrics-in-Python/example.png">{: .align-center}
 
-## Data prep using patsy (and R-style formula)
+# Data prep using patsy
 
 patsy 는 statistical model을 묘사하기 위한 python package 이며 R-style formula로 Y ~ x1 + x2 처럼 선형적인 관계를 symbolic 하게 표현해주며 또한 문자열로 되어있는 범주형 컬럼도 더미변수화 해줍니다. statsmodels 나 linearmodels 를 사용할 때 직관적인 high-level interface를 제공합니다.
 
@@ -65,7 +64,8 @@ df = pd.DataFrame(demo_data("x1","x2","x3","x4"))
 
 def mean_diff(x):
 	return x - np.mean(x)
-기본 API
+
+#기본 API
 dmatrix(formula_like, data={}, eval_env=0, NA_action='drop', return_type='matrix')
 #NA_action: null값 어떻게 할건지 "drop" or "raise" an error
 #return_type: "matrix" or "dataframe"
@@ -76,33 +76,34 @@ dmatrix("x1 + mean_diff(x2) + np.log(x3) + x1:x2 + I(x1+x2) + C(x4) + 1",
 
 # 카테고리변수 더미화(축소랭크) 예시
 dmatrix("C(X1) + Y", data=df, return_type='dataframe')
-# baseline 값 바꾸고 싶다면
+# baseline 값을 바꾸고 싶다면
 dmatrix("C(X1, Treatment('카테고리1')) + Y", data=df, return_type='dataframe')
 ```
 
-설명
+표현 방법 설명
 
-- 1: 상수항 (기입하지 않아도 알아서 들어감 만약 상수항을 넣기 싫다면 -1) 즉, y ~ x1 -1
+- `1`: 상수항 (기입하지 않아도 알아서 들어감 만약 상수항을 넣기 싫다면 -1) 즉, y ~ x1 -1
     - `y ~ x1` 이여도 default 로 상수항이 있는 `y ~ 1 + x1` 이긴합니다
 - `:`: interaction term
     - interaction term과 변수를 한번에 표현하려면? `*` 즉, `x1 + x2 + x1:x2` = `x1*x2`
-- I(): interaction 을 제외하고는 `I()` 라는 연산자를 사용하여 연산자를 명시해야 함 (예시는 x1컬럼과 x2컬럼의 합)
-- 함수를 넣어 변수 변환 가능 ex) np.log(), np.log1p() 직접만든 mean_diff()
+- `I()`: interaction 을 제외하고는 `I()` 라는 연산자를 사용하여 연산자를 명시해야 함 (예시는 x1컬럼과 x2컬럼의 합)
+- 함수를 넣어 변수 변환 가능 
+    - ex) `np.log()`, `np.log1p()` 직접만든 `mean_diff()`
 - 이 외에도 스케일링 작업을 위한 함수도 제공합니다
-    - center() : 평균을 0으로 스케일링 (mean_diff와 같음)
-    - standardize(): 평균을 0으로 하고 표준편차를 1로 스케일링
-    - 스케일링을 했던 평균값 등은 design_info.factor_infos 에 저장됩니다 → 통계분석에선 상관없지만 예측모형에선 모형을 학습할 때 사용한 것과 동일한 전처리를 해야하기 때문이죠 (새로운 데이터에도 똑같은 기존에 맞게 똑같이 처리를 해줘야함)
-- C(): 데이터가 범주형 값이지만 정수로 표시된 경우 C()를 이용해 categorical variable로 지정
-    - dmtrix("C(x, Treatment('category1'))", df) # 기준 범주값을 바꾸려면 Treatment()를 사용
-        - 결과값에 컬럼명이 T. 인건 treatment coded 라는 뜻입니다.
+    - `center()` : 평균을 0으로 스케일링 (mean_diff와 같음)
+    - `standardize()`: 평균을 0으로 하고 표준편차를 1로 스케일링
+    - 스케일링을 했던 평균값 등은 `design_info.factor_infos` 에 저장됩니다 → 통계분석에선 상관없지만 예측모형에선 모형을 학습할 때 사용한 것과 동일한 전처리(새로운 데이터에도 똑같은 기존에 맞게 똑같이 처리를 해줘야함)를 해야하기 때문입니다. 
+- `C()`: 데이터가 범주형 값이지만 정수로 표시된 경우 C()를 이용해 categorical variable로 지정
+- `Treatment()`: baseline값 변경 원할시 dmtrix("C(x, Treatment('category1'))", df)
+    - 결과값에 컬럼명이 T. 인건 treatment coded 라는 뜻입니다.
     - 여러개의 범주형 변수가 있는 경우
         - 통합 축소형: dmatrix(”x1+x2”) 와 같이하며 더미변수는 변수의 갯수와 상관없이 하나로 통합합니다.
 
-## Modules for statistical analysis
+# Modules for statistical analysis
 
 python에서 통계적인 모델링은 statsmodels, linear models 를 주로 사용하며 구현되지 않은 방법론(Tobit, Heckit, PSM, IPW 등)은 따로 이를 이용해 만들거나 따른 모듈을 찾아서 써야합니다. 저 같은 경우는 직접 구현해보거나 다른 모듈의 소스코드를 확인 후 사용합니다. 
 
-### statsmodels
+## Statsmodels
 
 formula style을 사용하는 기본적인 방법은 다음과 같습니다.
 
@@ -131,9 +132,9 @@ mod1 = smf.glm(formula=formula, data=dta, family=sm.families.Binomial()).fit()
 print(mod1.summary())
 ```
 
-### linearmodels
+## Linearmodels
 
-panel data를 다룰때 linearmodels를 사용하면 간편합니다.
+panel data를 다룰때 Linearmodels를 사용하면 간편합니다.
 
 ```python
 import linearmodels as lm
@@ -145,16 +146,16 @@ res = mod.fit(cov_type='clustered')
 res.summary
 ```
 
-### 모델의 결과물들
+## 모델의 결과물들
 
-result = model.fit() 을 통해 나오는 결과물들은 dir(result)로 확인 가능합니다. log-level, log-log 등 모형에서 더미변수의 해석, logit에서의 회귀계수 해석등을 더 쉽게 하려면 회귀 결과물에서 따로 빼와 exp()을 취하는 등 계산을 해야해서 알아두면 편합니다.
+`result = model.fit()` 을 통해 나오는 결과물들은 `dir(result)`로 확인 가능합니다. log-level, log-log 등 모형에서 더미변수의 해석, logit에서의 회귀계수 해석등을 더 쉽게 하려면 회귀 결과물에서 따로 빼와 exp()을 취하는 등 계산을 해야해서 알아두면 편합니다.
 
 > res.`summary` | res.`summary2` | res.pvalues | res.`params` : 회귀계수 | res.`bse` : std_err | res.`conf_int` | rsquared | rsquared_adj | f_pvalue | df_model: degree_freedom | df_resid: degree_freedom_resid | nobs: number of obs | fvalue: f_statistic
 > 
 
-## Standard Errors
+# Standard Errors
 
-Heteroskedasticity and Autocorrelation 등을 고려하기 위한 standard errors 계산 코드 예시입니다.
+회귀분석시 Heteroskedasticity 와 Autocorrelation 을 고려하기 위한 standard errors 계산 코드 예시입니다.
 
 ```python
 import numpy as np
@@ -186,7 +187,7 @@ firm_year_fe_panel = lm.PanelOLS.from_formula('y ~ x + EntityEffects + TimeEffec
 # Standard Errors clustered in panel data with two-way fixed effects 
 res = lm.PanelOLS.from_formula('y ~ x + EntityEffects + TimeEffects', data=df2).fit(cov_type='clustered', cluster_entity=True, cluster_time=True)
 
-# statsmodel 로 fixed efffects 구현하려면 카테고리 C 사용하며 더미들을 만들 수 있으나 linearmodels쓰자
+# statsmodel 로 fixed efffects 구현하려면 카테고리 C 사용하며 더미들을 만들 수 있으나 linearmodels쓰는게 편함
 firm_year_fe_ols = sm.ols(formula='y ~ x + C(firmid) + C(year)', data=df).fit(use_t=True)
 
 # Newey-West Adjustment for Standard Errors 
@@ -202,11 +203,11 @@ dk_ols = smf.ols(formula='y ~ x', data=df).fit(cov_type='nw-groupsum',
                                               use_t=True)
 ```
 
-## Report regression output
+# Report regression output
 
-stata 의 outreg2 나 R의 stargazer 처럼 descriptive statistics 나 분석결과를 엑셀, latex 등으로 해주는 패키지가 파이썬에는 조금 부족합니다.
+stata 의 outreg2 나 R의 stargazer 처럼 descriptive statistics 나 분석결과를 엑셀, latex 등으로 해주는 패키지가 파이썬은 빈약합니다.
 
-R의 stargazer 을 implement한 python의 stargazer가 있지만 statsmodels의 결과만 가져올 수 있고, output으로 excel 형태는 불가능 합니다. 즉, 직접 코드를 짜거나 수정을 해야합니다. 
+R의 stargazer 을 implement한 python의 stargazer가 있지만 statsmodels의 결과만 가져올 수 있고, output으로 excel 형태는 불가능 합니다. 즉, 직접 코드를 짜거나 수정 해야합니다. 
 
 ```python
 import pandas as pd
