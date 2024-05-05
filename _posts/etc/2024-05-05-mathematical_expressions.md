@@ -1,5 +1,5 @@
 ---
-title: "LaTex Math Command Guide"
+title: "LaTeX Math Command Guide"
 categories:
   - ETC
 tags:
@@ -121,11 +121,13 @@ For a closed path integral, use: $\oint$
 \end{bmatrix}
 ```
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 a & b & c
 \\d & e & f
 \\g & h & i
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Tip. Use \\\ to separate different rows, and & to separate elements of each row.
 
@@ -141,13 +143,13 @@ Tip. Use \\\ to separate different rows, and & to separate elements of each row.
 
 ### Cases
 
-```
+```tex
 \begin{cases}
   x & \text{if } x > 0 \\
   0 & \text{if } x \le 0
 \end{cases}
-
 ```
+
 $$
 \begin{cases}
   x & \text{if } x > 0 \\
