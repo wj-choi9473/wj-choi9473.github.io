@@ -276,10 +276,10 @@ print(f"LL = -{sol.fun}")
 개인의 Expected sales가 앞으로 time period t앞에서 얼마나 될지 계산을 하자면  
 (how many transacations any single customer will make going forward in time period t):
 
-$E(Y(t) \mid X=x, t_x, T, r, \alpha, a, b) = \dfrac{a + b + x – 1}{a-1} \times \dfrac{\bigg[1 – \bigg(\dfrac{\alpha + T}{\alpha + T + t}\bigg)^{r+x} {}_{2}F_{1}(r+x, b+x; a+b+x-1; \dfrac{t}{\alpha+T+t})\bigg]}{1 + \delta_{(x>0)}\dfrac{a}{b+x-1}\bigg(\dfrac{\alpha + T}{\alpha + t_x}\bigg)^{r+x}} $
+$$E(Y(t) \mid X=x, t_x, T, r, \alpha, a, b) = \dfrac{a + b + x – 1}{a-1} \times \dfrac{\bigg[1 – \bigg(\dfrac{\alpha + T}{\alpha + T + t}\bigg)^{r+x} {}_{2}F_{1}(r+x, b+x; a+b+x-1; \dfrac{t}{\alpha+T+t})\bigg]}{1 + \delta_{(x>0)}\dfrac{a}{b+x-1}\bigg(\dfrac{\alpha + T}{\alpha + t_x}\bigg)^{r+x}} $$
 
 
-Where ${}_{2}F_{1}$ is the Gaussian hypergeometric function
+$$\text{Where } {}_{2} F_{1} \text{ is the Gaussian hypergeometric function}$$
 
 
 ```python
