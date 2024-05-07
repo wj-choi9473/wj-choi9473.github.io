@@ -6,6 +6,8 @@ tags:
   - Essay
   - Causal Inference
 
+toc: false
+
 last_modified_at: 2022-03-22
 redirect_from:
     - /Data Science/데이터 사이언스에서 의사결정 문제란?
