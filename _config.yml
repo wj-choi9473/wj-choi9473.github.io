@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "DataScience & AI" # Meta 태그에 들어가는 영역 , masthead_title등이 없으면 기본값으로 나온다.
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Wonjae Choi"
+name                     : "WJ"
 description              : "Share What I've Learned to Motivate My Self"
 url                      : "https://wj-choi9473.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
