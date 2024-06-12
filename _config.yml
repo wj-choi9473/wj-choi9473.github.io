@@ -107,7 +107,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Wonjae Choi"
+  name             : "wj"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg" 프로필 이미지
   bio              : "M.S. In Management Engineering <br> Research Interests: Causal Inference/AI, Quantitative Marketing, Financial Engineering"
   location         : "Republic of Korea"
