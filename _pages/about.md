@@ -10,7 +10,8 @@ last_modified_at: 2023-08-20
 
 ## About Me
 
-```Causal Inference/AI, Quantitative Marketing, Financial Engineering``` 에 관심이 많습니다.  
+```Causal Inference/AI, Quantitative Marketing``` 에 관심이 많습니다.  
+
 좀 더 구체적으로 다음과 같은 일을 하며 대체불가능한 problem solver가 되고 싶습니다.
  - 데이터를 통해 인과관계를 파악하고 인사이트를 도출하여 비즈니스 또는 투자 의사결정
  - Context 에 맞는 모델링 및 시스템을 구현
