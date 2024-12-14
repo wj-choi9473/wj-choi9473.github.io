@@ -53,15 +53,15 @@ Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
 저자들은 전체적인 소비자를 본것이 아닌 `마케팅 수신메일을 동의한 소비자들중` `targeted` 된 소비자들을 랜덤하게 홍보메일을 보내는 그룹과 안보내는 그룹으로 나누어진 70개의 실험(즉, 프로모션 캠페인)을 분석했습니다.
 
 
-![](/assets/images/posts/datascience/abtestinsight/2.png){: .align-center}
+![](2.png){: .align-center}
 
 전체 샘플 집단과 옵트인한 그룹을 비교해 봤을때 표에 나와있는 expenditure and transactions per year 과 같은 특성들이 통계적으로 다르다고 합니다. 
 
-![](/assets/images/posts/datascience/abtestinsight/3.png){: .align-center}
+![](3.png){: .align-center}
 데이터를 더 자세히 보면, 프로모션 기간은 보통 이주에서 한달 사이에 다 끝났고 총 122개의 프로모션 캠페인중 76개의 캠페인이 treatment 와 control을 준 캠페인이고 그 중에서 6개의 캠페인은 참가된 개인의 수가 100명이 안되어 제외하고 100명 이상을 참여시킨 캠페인 총 70개의 캠페인 데이터를 가지고 분석을 진행했다고 합니다.
 또한 피규어 2를 보시면 각 개인이 프로모션 안에 여러번 참여하게 될 수도 있다는 것을 보여줍니다.
 
-![](/assets/images/posts/datascience/abtestinsight/4.png){: .align-center}
+![](4.png){: .align-center}
 그 뒤, 정말 treatment group이랑 control group간 randomization이 잘 되었는지 체크하기 위해
 두가지 점검을 하는데요  
 처음엔 여러 특성들을 비교검정를 합니다 총 71445 개의 instance중(개인이 중복거래도 포함) 61377이 프로모션캠페인이메일을 받고 10068이 컨트롤 그룹으로 되었습니다.   
@@ -69,7 +69,7 @@ Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
 
 두번째 점검으로 각 캠페인에 대한 dummy indicator를 넣어 70개 캠페인의 고졍효과로 회귀분석을 실행했을시에도 인구통계나 과거transaction이 통계적으로 유의한 계수는 없는걸 확인해 실험에 참가한 각 개인은 무작위 할당이라는 기업의 주장(저자들의 가정)을 뒷받침 합니다.
 
-![](/assets/images/posts/datascience/abtestinsight/5.png){: .align-center}
+![](5.png){: .align-center}
 그 외에도 테이블 4를 보시면 회사가 각 개인별로 RFM 을 측정해 타겟팅을 했다는 증거와  
 (Rfm은 r recency 마지막거래로부터 날짜 days f 는 frequency 오퍼전에 얼마나 많은 거래를 했는지 m은 monetary로 돈을 얼마나 썻는지를 나타냄)  
 
@@ -94,7 +94,7 @@ $\theta \equiv E_{ij}(Y_{ij}^1 - Y_{ij}^0 \mid D_{ij} = 1)$ 입니다.
 - $Y_{ij}^1 - Y_{ij}^0$ : Expenditures for $i$ in the presence and the absence of an offer
 - $D_{ij}$ : Dummy indicator wheter $i$ is a part of experiment $j$
 
-![](/assets/images/posts/datascience/abtestinsight/6.png){: .align-center}
+![](6.png){: .align-center}
 
 두번째 포인트론 각 실험마다 treatment 그룹에 할당되는 개인의 비율이 다르다고 하였습니다. 
 피규어4를 보시면 70개의 실험에서 treatment propensity (프로모션을 받을 확률 정도로 생각하셔도 됩니다.) 가 0.31 에서 0.97까지 크게 다른데 회사의 의사결정 때문일것이라고 합니다.
@@ -121,7 +121,7 @@ $y_{ij} = \alpha_j + \theta_{j}T_{ij} + \epsilon_{ij}$
 
 즉, 오퍼가 플랫폼에서 개인에게 구매를 유도할 수 있다면, 오퍼를 안받는 개인에 비해 제안을 받는 개인에 대한 지출이 증가하는 것을 보아야 합니다.
 
-![](/assets/images/posts/datascience/abtestinsight/7.png){: .align-center}
+![](7.png){: .align-center}
 
 테이블 7을 보시면 결과를 확인할 수 있는데요  
 오퍼가 유효할때 타겟된 개인들에게 평균 3.03 의 지출을 더 하게 하고 퍼센트로 따지자면 37% 의 지출을 늘리는것으로 확인이 됩니다. 
@@ -129,13 +129,13 @@ $y_{ij} = \alpha_j + \theta_{j}T_{ij} + \epsilon_{ij}$
 즉, 저자들의 첫번째 리서치 퀘스쳔에 대한 답을 알 수 있었습니다.
 
 
-![](/assets/images/posts/datascience/abtestinsight/8.png){: .align-center}
+![](8.png){: .align-center}
 
 테이블 9는 방금전의 식에 개인의 rfm 특성을 넣은 회귀분석 결과로 
 여기서 주목할 점은,  
 최근에 거래하지 않은 개인에게 큰 영향을 미침 -> 2번째 리서치 퀘스쳔의 대한 답으로 볼 수 있는 가격차별요소뿐만 아닌  reminder effect를 볼 수 있다는 것 입니다.
 
-![](/assets/images/posts/datascience/abtestinsight/9.png){: .align-center}
+![](9.png){: .align-center}
 
 피규어 5는 결과를 시각화 해서 보여준것인데요 
 
@@ -157,19 +157,19 @@ $y_{ij} = \alpha_j + \theta_{j}T_{ij} + \epsilon_{ij}$
 $\tilde Y_{ij} = \alpha_j + \tilde \theta_{j}T_{ij} + \epsilon_{ij} $  
 $\tilde Y_{ij}$ :$i$’s total expenditure during a period after offer $j$ expires 
 
-![](/assets/images/posts/datascience/abtestinsight/10.png){: .align-center}
+![](10.png){: .align-center}
 
 피규어 6을 보시면 결과로 프로모션이 만료된 후에도 할인을 받을 수 없는데 지출이 증가하는걸 볼 수 있습니다.
 
 그렇지만 소비자들이 정말 오퍼를 받음으로 기억을 해 나중에 구매하는지는 정확히 알 수 없지만 개인의 carryover effects는 확인 할 수 있는데요, 그래서 다시 프로모션 기간에 구매를 했는지 더미변수를 넣어 확인하였고 테이블10의 결과 표를 보시면 프로모션이 유효한 동안 거래 한 개인이 거래를했지만 오퍼을받지 못한 개인보다 제안 후 주에 지출 할 가능성이 더 높다고 저자들은 해석했습니다.
 
-![](/assets/images/posts/datascience/abtestinsight/11.png){: .align-center}
+![](11.png){: .align-center}
 
 그 다음으로 이메일이 전송된 후 시간이 지남에 따라 오퍼의 효과가 어떻게 감소하는지를 살펴보았는데요, 
 프로모션 오퍼가 발송 된 후 3개월 동안 매주 트리트먼트 그룹과 컨트롤그룹간의 지출 차이를 추정합니다.
 피규어 7은 그 추정을 시각화 하였는데요, 처음 4 주 동안 트리트먼트 그룹이 컨트롤 그룹보다 더 많이 지출 하는걸 볼 수 있습니다(3주차 제외). 
 
-![](/assets/images/posts/datascience/abtestinsight/12.png){: .align-center}
+![](12.png){: .align-center}
 
 그 다음으론  오퍼의 종류가 다른 섹션의 티켓 판매에도 영향을 미치는지를 조사하는데요, 
 언급하진 않았지만 데이터는 스텁허브 같인 티켓리셀링 플랫폼에서 얻은 데이터 인데요, 할인 프로모션에서 대부분 MLB티켓은 할인에서 제외를 한 오퍼가 많았습니다.
@@ -181,5 +181,5 @@ $\tilde Y_{ij}$ :$i$’s total expenditure during a period after offer $j$ expir
 $y_{ij} = \alpha_j + \delta_{j}T_{ij} \times PastMLB_{ij} + \gamma_{j}PastMLD_ij + \epsilon_ij$
 
 
-![](/assets/images/posts/datascience/abtestinsight/13.png){: .align-center}
+![](13.png){: .align-center}
 
