@@ -47,7 +47,7 @@ Navdeep S. Sahni, Dan Zou, Pradeep K. Chintagunta (2017)
 # Empirical Setting and Data
 
 
-![](/assets/images/posts/datascience/abtestinsight/1.png){: .align-center}
+![](1.png){: .align-center}
 
 
 저자들은 전체적인 소비자를 본것이 아닌 `마케팅 수신메일을 동의한 소비자들중` `targeted` 된 소비자들을 랜덤하게 홍보메일을 보내는 그룹과 안보내는 그룹으로 나누어진 70개의 실험(즉, 프로모션 캠페인)을 분석했습니다.
