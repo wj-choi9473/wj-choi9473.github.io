@@ -289,11 +289,10 @@ compress_html:
 defaults:
   # _posts
   - scope:
-      path: "_posts"
+      path: ""
       type: posts
     values:
       layout: single
-      image_path: ""
       #author_profile: false
       read_time: true
       use_math: true
